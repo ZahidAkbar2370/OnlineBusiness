@@ -52,6 +52,31 @@ Route::get('/default', function () {
     return view('Shop.Template.default');
 });
 
+
+Route::get('/my-account', function () {
+    return view('Shop.Pages.my_account');
+});
+
+Route::get('/carts', function () {
+    return view('Shop.Pages.carts');
+});
+
+Route::get('/shop-layout', function () {
+    return view('Shop.BackendPanel.layout');
+});
+
+Route::get('/shop-panel', function () {
+    return view('Shop.BackendPanel.Dashboard.dashboard');
+});
+
+Route::get('/shop-add-user', function () {
+    return view('Shop.BackendPanel.User.add_user');
+});
+
+Route::get('/shop-view-users', function () {
+    return view('Shop.BackendPanel.User.view_users');
+});
+
 ////////////////////////////////////// End Shop Template Route /////////////////////////////////////
 
 Route::get("home",[TemplateController::class,"home"]);

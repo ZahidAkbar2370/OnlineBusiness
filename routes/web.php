@@ -14,5 +14,41 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('App.layout');
 });
+
+
+// 
+// Template 1
+// 
+Route::get('/home1', function () {
+    return view('Shop.Home.home1');
+});
+
+Route::get('product1', function () {
+    return view('Shop.Product.product1');
+});
+
+
+// 
+// Template 2
+// 
+Route::get('/home2', function () {
+    return view('Shop.Home.home2');
+});
+
+Route::get('product2', function () {
+    return view('Shop.Product.product2');
+});
+
+// 
+// Template 2
+// 
+Route::get('/home3', function () {
+    return view('Shop.Template.template3');
+});
+
+Route::get('product2', function () {
+    return view('Shop.Product.product2');
+});
+

@@ -1,7 +1,4 @@
-@extends('Shop.Template.template2')
-@section('content')
-
-        <main class="main">
+<main class="main">
             <div class="intro-slider-container">
                 <div class="intro-slider owl-carousel owl-theme owl-nav-inside owl-light" data-toggle="owl" data-owl-options='{
                         "dots": false,
@@ -625,4 +622,3 @@
             <div class="mb-2"></div><!-- End .mb-5 -->
             
         </main><!-- End .main -->
-@endsection

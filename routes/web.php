@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ Route::get('/', function () {
     return view('App.layout');
 });
 
-
+////////////////////////////////////// Start Shop Template Route /////////////////////////////////////
 // 
 // Template 1
 // 
@@ -42,7 +43,7 @@ Route::get('product2', function () {
 });
 
 // 
-// Template 2
+// Template 3
 // 
 Route::get('/home3', function () {
     return view('Shop.Template.template3');
@@ -52,3 +53,14 @@ Route::get('product2', function () {
     return view('Shop.Product.product2');
 });
 
+// 
+// Template 4 (default)
+// 
+Route::get('/home4', function () {
+    return view('Shop.Template.default');
+});
+
+////////////////////////////////////// End Shop Template Route /////////////////////////////////////
+
+Route::get("home",[TemplateController::class,"home"]);
+Route::get("product",[TemplateController::class,"product"]);

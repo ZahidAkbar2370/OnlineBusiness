@@ -1,5 +1,3 @@
-@extends('Shop.Template.template1')
-@section('content')
 <div class="container pt-6 new-arrivals">
                 <div class="heading heading-center mb-3">
                     <h2 class="title">New Arrivals</h2><!-- End .title -->
@@ -595,4 +593,3 @@
             </div><!-- End .bg-lighter pt-5 pb-5 -->
         </main><!-- End .main -->
 
-@endsection

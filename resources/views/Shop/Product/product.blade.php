@@ -1,0 +1,17 @@
+@if(!empty($values) && $values->id == 1)
+    @include('Shop.Template.Header.header1')
+    @include('Shop.Product.product1')
+    @include('Shop.Template.Footer.footer1')
+@elseif(!empty($values) && $values->id == 2)
+    @include('Shop.Template.Header.header2')
+    @include('Shop.Product.product2')
+    @include('Shop.Template.Footer.footer2')
+@elseif(!empty($values) && $values->id == 3)
+    @include('Shop.Template.Header.header3')
+    @include('Shop.Product.product3')
+    @include('Shop.Template.Footer.footer3')
+@else
+    @include('Shop.Template.Header.default')
+    @include('Shop.Product.default')
+    @include('Shop.Template.Footer.default')
+@endif

@@ -23,11 +23,7 @@ Route::get('/', function () {
 // Template 1
 // 
 Route::get('/home1', function () {
-    return view('Shop.Home.home1');
-});
-
-Route::get('product1', function () {
-    return view('Shop.Product.product1');
+    return view('Shop.Template.template1');
 });
 
 
@@ -35,11 +31,7 @@ Route::get('product1', function () {
 // Template 2
 // 
 Route::get('/home2', function () {
-    return view('Shop.Home.home2');
-});
-
-Route::get('product2', function () {
-    return view('Shop.Product.product2');
+    return view('Shop.Template.template2');
 });
 
 // 
@@ -56,11 +48,11 @@ Route::get('product2', function () {
 // 
 // Template 4 (default)
 // 
-Route::get('/home4', function () {
+Route::get('/default', function () {
     return view('Shop.Template.default');
 });
 
 ////////////////////////////////////// End Shop Template Route /////////////////////////////////////
 
 Route::get("home",[TemplateController::class,"home"]);
-Route::get("product",[TemplateController::class,"product"]);
+Route::get("products",[TemplateController::class,"product"]);

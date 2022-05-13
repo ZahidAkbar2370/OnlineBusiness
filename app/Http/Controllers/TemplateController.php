@@ -7,11 +7,19 @@ use Illuminate\Http\Request;
 
 class TemplateController extends Controller
 {
-    public function index()
+    public function home()
     {
-        $id = 4;
+        $id = 3;
         $values = Template::find($id);
 
         return view('Shop.Home.home',["values" => $values]);
+    }
+
+    public function product()
+    {
+        $id = 3;
+        $values = Template::find($id);
+
+        return view('Shop.Product.product',["values" => $values]);
     }
 }

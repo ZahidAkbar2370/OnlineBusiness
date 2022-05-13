@@ -1,6 +1,3 @@
-@extends('Shop.Template.template2')
-@section('content')
-
 <div class="mb-7"></div><!-- End .mb-5 -->
 
 <div class="container">
@@ -268,7 +265,3 @@
         <a href="#" class="btn btn-outline-dark-2 btn-more"><span>show more</span></a>
     </div><!-- End .more-container -->
 </div><!-- End .container -->
-
-
-    
-@endsection

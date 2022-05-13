@@ -57,7 +57,7 @@
                                     <a href="{{url('home3')}}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('product3')}}">Products</a>
+                                    <a href="#">Products</a>
                                 </li>
                                 <li>
                                     <a href="#">Contact Us</a>

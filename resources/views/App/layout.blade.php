@@ -67,6 +67,7 @@
                                 <li>
                                     <a class="sf-with-ul">Shop Templates</a>
                                     <ul>
+                                        <li><a href="{{url('default')}}" target="_blank">Default</a></li>
                                         <li><a href="{{url('home1')}}" target="_blank">Template 1</a></li>
                                         <li><a href="{{url('home2')}}" target="_blank">Template 2</a></li>
                                         <li><a href="{{url('home3')}}" target="_blank">Template 3 </a></li>

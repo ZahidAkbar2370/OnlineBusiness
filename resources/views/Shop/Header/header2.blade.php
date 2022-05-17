@@ -23,16 +23,16 @@
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff"> -->
-    <link rel="stylesheet" href="assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css')}}">
     <!-- Plugins CSS File -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/plugins/magnific-popup/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery.countdown.css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/owl-carousel/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/magnific-popup/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/jquery.countdown.css')}}">
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/skins/skin-demo-6.css">
-    <link rel="stylesheet" href="assets/css/demos/demo-6.css">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/skins/skin-demo-6.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/demos/demo-6.css')}}">
 </head>
 
 <body>
@@ -53,7 +53,7 @@
                         </div><!-- End .header-search -->
                     </div>
                     <div class="header-center">
-                        <a href="index.html" class="logo">
+                        <a href="{{url('/')}}" class="logo">
                             <h3>Online Layyah</h3>
                             <!-- <img src="assets/images/demos/demo-6/logo.png" alt="Molla Logo" width="82" height="20"> -->
                         </a>
@@ -89,7 +89,7 @@
 
                                         <figure class="product-image-container">
                                             <a href="#" class="product-image">
-                                                <img src="assets/images/products/cart/product-1.jpg" alt="product">
+                                                <img src="{{asset('assets/images/products/cart/product-1.jpg')}}" alt="product">
                                             </a>
                                         </figure>
                                         <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -119,10 +119,10 @@
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
-                                    <a href="{{url('home')}}">Home</a>
+                                    <a href="{{url('shop/'.$shopProfile->shop_url)}}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('products')}}">Products</a>
+                                    <a href="{{url('products/'.$shopProfile->shop_url)}}">Products</a>
                                 </li>
                                 <li>
                                     <a href="#">Contact Us</a>

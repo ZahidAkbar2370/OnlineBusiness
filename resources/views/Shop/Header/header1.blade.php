@@ -43,18 +43,18 @@
                             <i class="icon-bars"></i>
                         </button>
 
-                        <a href="#" class="logo">
-                            <h3 style="color:white">LOGO</h3>
+                        <a href="{{url('/')}}" class="logo">
+                            <h3 style="color:white">Online Layyah</h3>
                             <!-- <img src="assets/images/demos/demo-5/logo.png" alt="Molla Logo" width="105" height="25"> -->
                         </a>
 
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
-                                    <a href="{{url('home')}}">Home</a>
+                                    <a href="{{url('shop/'.$shopProfile->shop_url)}}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('products')}}">Products</a>
+                                    <a href="{{url('products/'.$shopProfile->shop_url)}}">Products</a>
                                 </li>
                                 <li>
                                     <a href="#">Contact Us</a>
@@ -103,7 +103,7 @@
 
                                         <figure class="product-image-container">
                                             <a href="#" class="product-image">
-                                                <img src="assets/images/products/cart/product-1.jpg" alt="product">
+                                                <img src="{{asset('assets/images/products/cart/product-1.jpg')}}" alt="product">
                                             </a>
                                         </figure>
                                         <a href="#" class="btn-remove" title="Remove Product"><i
@@ -138,7 +138,7 @@
                 <div class="intro-slider owl-carousel owl-theme owl-nav-inside owl-light" data-toggle="owl"
                     data-owl-options='{"nav": false, "dots": false}'>
                     <div class="intro-slide"
-                        style="background-image: url(assets/images/demos/demo-5/slider/slide-1.jpg);">
+                        style="background-image: url({{asset('assets/images/demos/demo-5/slider/slide-1.jpg')}});">
                         <div class="container intro-content text-center">
                             <h3 class="intro-subtitle text-white">Don’t Miss</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title text-white">Mystery Deals</h1><!-- End .intro-title -->
@@ -148,7 +148,7 @@
                     </div><!-- End .intro-slide -->
 
                     <div class="intro-slide"
-                        style="background-image: url(assets/images/demos/demo-5/slider/slide-2.jpg);">
+                        style="background-image: url({{asset('assets/images/demos/demo-5/slider/slide-2.jpg')}});">
                         <div class="container intro-content text-center">
                             <h3 class="intro-subtitle text-white">Limited time only</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title text-white">Treat your self</h1><!-- End .intro-title -->

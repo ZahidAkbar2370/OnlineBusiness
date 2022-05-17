@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('templates', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("user_id");
             $table->string("template_name");
+            $table->enum("publication_status",[0,1])->default("1");
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@
                             }
                         }
                     }'>
-                    <div class="intro-slide" style="background-image: url(assets/images/demos/demo-8/slider/slide-1.jpg);">
+                    <div class="intro-slide" style="background-image: url({{asset('assets/images/demos/demo-8/slider/slide-1.jpg')}});">
                         <div class="container intro-content text-left">
                             <h3 class="intro-subtitle">Limited time only *</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title">Summer<br><strong>sale</strong></h1><!-- End .intro-title -->
@@ -22,10 +22,10 @@
                                 <i class="icon-long-arrow-right"></i>
                             </a>
                         </div><!-- End .intro-content -->
-                        <img class="position-right" src="assets/images/demos/demo-8/slider/img-1.png">
+                        <img class="position-right" src="{{asset('assets/images/demos/demo-8/slider/img-1.png')}}">
                     </div><!-- End .intro-slide -->
 
-                    <div class="intro-slide" style="background-image: url(assets/images/demos/demo-8/slider/slide-2.jpg);">
+                    <div class="intro-slide" style="background-image: url({{asset('assets/images/demos/demo-8/slider/slide-2.jpg')}});">
                         <div class="container intro-content text-right">
                             <h3 class="intro-subtitle">PREMIUM QUALITY</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title">coats <span class="highlight">&</span><br>jackets</h1><!-- End .intro-title -->
@@ -35,7 +35,7 @@
                                 <i class="icon-long-arrow-right"></i>
                             </a>
                         </div><!-- End .intro-content -->
-                        <img class="position-left" src="assets/images/demos/demo-8/slider/img-2.png">
+                        <img class="position-left" src="{{asset('assets/images/demos/demo-8/slider/img-2.png')}}">
                     </div><!-- End .intro-slide -->
                 </div><!-- End .intro-slider owl-carousel owl-simple -->
 
@@ -49,7 +49,7 @@
                             <div class="col-sm-6 col-lg-3">
                                 <div class="banner banner-overlay">
                                     <a href="#">
-                                        <img src="assets/images/demos/demo-8/banners/banner-1.jpg" alt="Banner">
+                                        <img src="{{asset('assets/images/demos/demo-8/banners/banner-1.jpg')}}" alt="Banner">
                                     </a>
 
                                     <div class="banner-content">
@@ -63,7 +63,7 @@
                             <div class="col-sm-6 col-lg-3">
                                 <div class="banner banner-overlay">
                                     <a href="#">
-                                        <img src="assets/images/demos/demo-8/banners/banner-2.jpg" alt="Banner">
+                                        <img src="{{asset('assets/images/demos/demo-8/banners/banner-2.jpg')}}" alt="Banner">
                                     </a>
 
                                     <div class="banner-content">
@@ -77,7 +77,7 @@
                             <div class="col-sm-6 col-lg-3 d-none d-lg-block">
                                 <div class="banner banner-overlay">
                                     <a href="#">
-                                        <img src="assets/images/demos/demo-8/banners/banner-3.jpg" alt="Banner">
+                                        <img src="{{asset('assets/images/demos/demo-8/banners/banner-3.jpg')}}" alt="Banner">
                                     </a>
 
                                     <div class="banner-content">
@@ -91,7 +91,7 @@
                             <div class="col-sm-6 col-lg-3 d-none d-lg-block">
                                 <div class="banner banner-overlay">
                                     <a href="#">
-                                        <img src="assets/images/demos/demo-8/banners/banner-3.jpg" alt="Banner">
+                                        <img src="{{asset('assets/images/demos/demo-8/banners/banner-3.jpg')}}" alt="Banner">
                                     </a>
 
                                     <div class="banner-content">
@@ -129,31 +129,31 @@
                             }
                         }'>
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/1.png" alt="Brand Name">
+                            <img src="{{asset('assets/images/brands/1.png')}}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/2.png" alt="Brand Name">
+                            <img src="{{asset('assets/images/brands/2.png')}}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/3.png" alt="Brand Name">
+                            <img src="{{asset('assets/images/brands/3.png')}}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/4.png" alt="Brand Name">
+                            <img src="{{asset('assets/images/brands/4.png')}}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/5.png" alt="Brand Name">
+                            <img src="{{asset('assets/images/brands/5.png')}}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/6.png" alt="Brand Name">
+                            <img src="{{asset('assets/images/brands/6.png')}}" alt="Brand Name">
                         </a>
 
                         <a href="#" class="brand">
-                            <img src="assets/images/brands/7.png" alt="Brand Name">
+                            <img src="{{asset('assets/images/brands/7.png')}}" alt="Brand Name">
                         </a>
                     </div><!-- End .owl-carousel -->
                 </div><!-- End .container -->
@@ -171,13 +171,15 @@
                     <div class="tab-pane p-0 fade show active" id="recent-all-tab" role="tabpanel" aria-labelledby="recent-all-link">
                         <div class="products">
                             <div class="row justify-content-center">
+                                @if($products)
+                                @foreach($products as $product)
                                 <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
-                                            <span class="product-label label-sale">Sale</span>
+                                            {{-- <span class="product-label label-sale">Sale</span> --}}
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-5-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-5-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('')}}{{$product->product_image_1}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('')}}{{$product->product_image_2}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -191,23 +193,24 @@
 
                                         <div class="product-body">
                                             <div class="product-cat">
-                                                <a href="#">Clothing</a>
+                                                <a href="#">{{$product->ProductCategory->p_category_name ?? "category_name"}}</a>
                                             </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="#">Tie-detail top</a></h3><!-- End .product-title -->
+                                            <h3 class="product-title"><a href="#">{{$product->product_name}}</a></h3><!-- End .product-title -->
                                             <div class="product-price">
-                                                <span class="new-price">Now $3.99</span>
-                                                <span class="old-price">Was $6.99</span>
+                                                <span class="new-price">Now PKR{{$product->product_sale_price - $product->product_discount_price}}</span>
+                                                <span class="old-price">Was PKR {{$product->product_sale_price}}</span>
                                             </div><!-- End .product-price -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
                                 </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                                <div class="col-6 col-md-4 col-lg-3">
+                                @endforeach
+                                @endif
+                                {{-- <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-6-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-6-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-6-1.jpg')}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-6-2.jpg')}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -229,14 +232,14 @@
                                             </div><!-- End .product-price -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
-                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 --> --}}
 
-                                <div class="col-6 col-md-4 col-lg-3">
+                                {{-- <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-7-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-7-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-7-1.jpg')}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-7-2.jpg')}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -259,22 +262,22 @@
 
                                             <div class="product-nav product-nav-thumbs">
                                                 <a href="#" class="active">
-                                                    <img src="assets/images/demos/demo-8/products/product-7-thumb.jpg" alt="product desc">
+                                                    <img src="{{asset('assets/images/demos/demo-8/products/product-7-thumb.jpg')}}" alt="product desc">
                                                 </a>
                                                 <a href="#">
-                                                    <img src="assets/images/demos/demo-8/products/product-7-2-thumb.jpg" alt="product desc">
+                                                    <img src="{{asset('assets/images/demos/demo-8/products/product-7-2-thumb.jpg')}}" alt="product desc">
                                                 </a>
                                             </div><!-- End .product-nav -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
-                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 --> --}}
 
-                                <div class="col-6 col-md-4 col-lg-3">
+                                {{-- <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-8-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-8-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-8-1.jpg')}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-8-2.jpg')}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -296,14 +299,14 @@
                                             </div><!-- End .product-price -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
-                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 --> --}}
 
-                                <div class="col-6 col-md-4 col-lg-3">
+                                {{-- <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-9-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-9-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-9-1.jpg')}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-9-2.jpg')}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -325,14 +328,14 @@
                                             </div><!-- End .product-price -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
-                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 --> --}}
 
-                                <div class="col-6 col-md-4 col-lg-3">
+                                {{-- <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-10-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-10-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-10-1.jpg')}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-10-2.jpg')}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -355,22 +358,22 @@
 
                                             <div class="product-nav product-nav-thumbs">
                                                 <a href="#" class="active">
-                                                    <img src="assets/images/demos/demo-8/products/product-10-thumb.jpg" alt="product desc">
+                                                    <img src="{{asset('assets/images/demos/demo-8/products/product-10-thumb.jpg')}}" alt="product desc">
                                                 </a>
                                                 <a href="#">
-                                                    <img src="assets/images/demos/demo-8/products/product-10-2-thumb.jpg" alt="product desc">
+                                                    <img src="{{asset('assets/images/demos/demo-8/products/product-10-2-thumb.jpg')}}" alt="product desc">
                                                 </a>
                                             </div><!-- End .product-nav -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
-                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 --> --}}
 
-                                <div class="col-6 col-md-4 col-lg-3">
+                                {{-- <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-11-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-11-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-11-1.jpg')}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-11-2.jpg')}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -392,15 +395,15 @@
                                             </div><!-- End .product-price -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
-                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 --> --}}
 
-                                <div class="col-6 col-md-4 col-lg-3">
+                                {{-- <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             <span class="product-label label-sale">sale</span>
                                             <a href="#">
-                                                <img src="assets/images/demos/demo-8/products/product-12-1.jpg" alt="Product image" class="product-image">
-                                                <img src="assets/images/demos/demo-8/products/product-12-2.jpg" alt="Product image" class="product-image-hover">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-12-1.jpg')}}" alt="Product image" class="product-image">
+                                                <img src="{{asset('assets/images/demos/demo-8/products/product-12-2.jpg')}}" alt="Product image" class="product-image-hover">
                                             </a>
 
                                             <div class="product-action-vertical">
@@ -423,14 +426,14 @@
                                             </div><!-- End .product-price -->
                                         </div><!-- End .product-body -->
                                     </div><!-- End .product -->
-                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div><!-- End .col-sm-6 col-md-4 col-lg-3 --> --}}
                             </div><!-- End .row -->
                         </div><!-- End .products -->
                     </div><!-- .End .tab-pane -->
                 </div><!-- End .tab-content -->
 
                 <div class="more-container text-center mt-3 mb-3">
-                    <a href="#" class="btn btn-outline-dark-3 btn-more"><span>View More</span><i class="icon-long-arrow-right"></i></a>
+                    <a href="{{url('products/'.$shopProfile->shop_url)}}" class="btn btn-outline-dark-3 btn-more"><span>View More</span><i class="icon-long-arrow-right"></i></a>
                 </div><!-- End .more-container -->
             </div><!-- End .container -->
 
@@ -439,7 +442,7 @@
 
             <div class="trending">
                 <a href="#">
-                    <img src="assets/images/demos/demo-8/banners/banner-4.jpg" alt="Banner">
+                    <img src="{{asset('assets/images/demos/demo-8/banners/banner-4.jpg')}}" alt="Banner">
                 </a>
                 <div class="banner banner-big d-md-block">
                     <div class="banner-content text-center">

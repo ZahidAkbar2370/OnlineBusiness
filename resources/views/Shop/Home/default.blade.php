@@ -11,7 +11,7 @@
                             }
                         }
                     }'>
-                    <div class="intro-slide" style="background-image: url(assets/images/demos/demo-11/slider/slide-1.jpg);">
+                    <div class="intro-slide" style="background-image: url({{asset('assets/images/demos/demo-11/slider/slide-1.jpg')}});">
                         <div class="container intro-content">
                             <h3 class="intro-subtitle text-primary">SEASONAL PICKS</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title">Get All <br>The Good Stuff</h1><!-- End .intro-title -->
@@ -23,7 +23,7 @@
                         </div><!-- End .intro-content -->
                     </div><!-- End .intro-slide -->
 
-                    <div class="intro-slide" style="background-image: url(assets/images/demos/demo-11/slider/slide-2.jpg);">
+                    <div class="intro-slide" style="background-image: url({{asset('assets/images/demos/demo-11/slider/slide-2.jpg')}});">
                         <div class="container intro-content">
                             <h3 class="intro-subtitle text-primary">all at 50% off</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title text-white">The Most Beautiful <br>Novelties In Our Shop</h1><!-- End .intro-title -->
@@ -40,7 +40,8 @@
             </div><!-- End .intro-slider-container -->
 
             <div class="container">
-                <div class="toolbox toolbox-filter">
+                <h3>Products</h3>
+                {{-- <div class="toolbox toolbox-filter">
                     <div class="toolbox-left">
                         <a href="#" class="filter-toggler">Filters</a>
 
@@ -54,9 +55,9 @@
                             <li><a href="#" data-filter=".sale">Sale</a></li>
                         </ul>
                     </div><!-- End .toolbox-right -->
-                </div><!-- End .filter-toolbox -->
+                </div><!-- End .filter-toolbox --> --}}
 
-                <div class="widget-filter-area" id="product-filter-area">
+                {{-- <div class="widget-filter-area" id="product-filter-area">
                     <a href="#" class="widget-filter-clear">Clean All</a>
 
                     <div class="filter-area-wrapper">
@@ -198,13 +199,15 @@
                         </div><!-- End .row -->
                     </div><!-- End .filter-area-wrapper -->
                 </div><!-- End #product-filter-area.widget-filter-area -->
-                
+                 --}}
                 <div class="products-container" data-layout="fitRows">
+                    @if($products)
+                    @foreach($products as $product)
                     <div class="product-item furniture col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-1.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('')}}{{$product->product_image_1}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -212,12 +215,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Flow Slim Armchair</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">{{$product->product_name}}</a></h3><!-- End .product-title -->
 
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>add to cart</span><i class="icon-long-arrow-right"></i></a>
@@ -225,13 +228,14 @@
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
                     </div><!-- End .product-item -->
-
-                    <div class="product-item lighting col-6 col-md-4 col-lg-3">
+                    @endforeach
+                    @endif
+                    {{-- <div class="product-item lighting col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
                                 <span class="product-label">Out of stock</span>
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-2.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-2.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -244,7 +248,7 @@
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Swirl Suspension lamp</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Swirl Suspension lamp</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     <div class="out-price">$446.00</div><!-- End .out-price -->
                                 </div><!-- End .product-price -->
@@ -254,13 +258,13 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item furniture col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item furniture col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-3.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-3.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -273,7 +277,7 @@
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Block Side Table/Trolley</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Block Side Table/Trolley</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $229.00
                                 </div><!-- End .product-price -->
@@ -287,14 +291,14 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item accessories lighting sale col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item accessories lighting sale col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
                                 <span class="product-label">Sale</span>
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-4.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-4.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -307,7 +311,7 @@
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Madra Log Holder</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Madra Log Holder</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     <span class="new-price">$103.00</span>
                                     <span class="old-price">Was $130.00</span>
@@ -322,14 +326,14 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item furniture sale col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item furniture sale col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
                                 <span class="product-label">Sale</span>
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-5.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-5.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -342,7 +346,7 @@
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Foldable Tray Table</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Foldable Tray Table</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     <span class="new-price">$320.00</span>
                                     <span class="old-price">Was $480.00</span>
@@ -357,13 +361,13 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item furniture accessories col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item furniture accessories col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-6.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-6.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -371,12 +375,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Original Stonewashed Beanbag</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Original Stonewashed Beanbag</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $209.00
                                 </div><!-- End .product-price -->
@@ -385,13 +389,13 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item accessories lighting col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item accessories lighting col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-7.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-7.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -399,12 +403,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Wingback Chair</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Wingback Chair</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $2450.00
                                 </div><!-- End .product-price -->
@@ -418,13 +422,13 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item furniture sale col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item furniture sale col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-8.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-8.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -432,12 +436,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Cushion Set 3 Pieces</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Cushion Set 3 Pieces</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $99.00
                                 </div><!-- End .product-price -->
@@ -446,13 +450,13 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item furniture accessories col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item furniture accessories col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-9.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-9.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -460,12 +464,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Garden Armchair</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Garden Armchair</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $94.00
                                 </div><!-- End .product-price -->
@@ -474,13 +478,13 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item accessories col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item accessories col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-10.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-10.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -488,12 +492,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Roots Sofa Bed</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Roots Sofa Bed</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $337.00
                                 </div><!-- End .product-price -->
@@ -502,13 +506,13 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item lighting sale col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item lighting sale col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-11.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-11.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -516,12 +520,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Butler Stool Ladder</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Butler Stool Ladder</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $251.00
                                 </div><!-- End .product-price -->
@@ -530,14 +534,14 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
 
-                    <div class="product-item lighting sale col-6 col-md-4 col-lg-3">
+                    {{-- <div class="product-item lighting sale col-6 col-md-4 col-lg-3">
                         <div class="product product-4">
                             <figure class="product-media">
                                 <span class="product-label">Sale</span>
-                                <a href="product.html">
-                                    <img src="assets/images/demos/demo-11/products/product-12.jpg" alt="Product image" class="product-image">
+                                <a href="#">
+                                    <img src="{{asset('assets/images/demos/demo-11/products/product-12.jpg')}}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -545,12 +549,12 @@
                                 </div><!-- End .product-action -->
 
                                 <div class="product-action">
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                                    <a href="#" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
-                                <h3 class="product-title"><a href="product.html">Carronade Large Suspension Lamp</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="#">Carronade Large Suspension Lamp</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     <span class="new-price">$892.00</span>
                                     <span class="old-price">Was $939.00</span>
@@ -565,11 +569,11 @@
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-                    </div><!-- End .product-item -->
+                    </div><!-- End .product-item --> --}}
                 </div><!-- End .products-container -->
             </div><!-- End .container -->
 
             <div class="more-container text-center mt-0 mb-7">
-                <a href="category.html" class="btn btn-outline-dark-3 btn-more"><span>more products</span><i class="la la-refresh"></i></a>
+                <a href="{{url('products/'.$shopProfile->shop_url)}}" class="btn btn-outline-dark-3 btn-more"><span>more products</span><i class="la la-refresh"></i></a>
             </div><!-- End .more-container -->
         </main><!-- End .main -->

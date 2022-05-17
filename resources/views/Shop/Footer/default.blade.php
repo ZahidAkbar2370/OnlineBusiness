@@ -2,7 +2,7 @@
         <footer class="footer footer-2">
             <div class="footer-bottom">
                 <div class="container">
-                    <p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
+                    <p class="footer-copyright">Copyright © 2022 Online Layyah. All Rights Reserved.</p><!-- End .footer-copyright -->
                     <ul class="footer-menu">
                         <li><a href="#">Terms Of Use</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -37,10 +37,10 @@
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
-                        <a href="{{url('home')}}">Home</a>
+                        <a href="{{url('shop/'.$shopProfile->shop_url)}}">Home</a>
                     </li>
                     <li>
-                        <a href="{{url('products')}}">Products</a>
+                        <a href="{{url('products/'.$shopProfile->shop_url)}}">Products</a>
                     </li>
                     <li>
                         <a href="#" class="sf-with-ul">Contact US</a>
@@ -51,22 +51,22 @@
     </div><!-- End .mobile-menu-container -->
 
     <!-- Plugins JS File -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.hoverIntent.min.js"></script>
-    <script src="assets/js/jquery.waypoints.min.js"></script>
-    <script src="assets/js/superfish.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/wNumb.js"></script>
-    <script src="assets/js/nouislider.min.js"></script>
-    <script src="assets/js/bootstrap-input-spinner.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.hoverIntent.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('assets/js/superfish.min.js')}}"></script>
+    <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('assets/js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('assets/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('assets/js/wNumb.js')}}"></script>
+    <script src="{{asset('assets/js/nouislider.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap-input-spinner.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
     
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/demos/demo-11.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/demos/demo-11.js')}}"></script>
 </body>
 
 

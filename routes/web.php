@@ -3,20 +3,7 @@
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('App.layout');
-});
 
 ////////////////////////////////////// Start Shop Template Route /////////////////////////////////////
 // 
@@ -39,10 +26,6 @@ Route::get('/home2', function () {
 // 
 Route::get('/home3', function () {
     return view('Shop.Template.template3');
-});
-
-Route::get('product2', function () {
-    return view('Shop.Product.product2');
 });
 
 // 
@@ -79,5 +62,28 @@ Route::get('/shop-view-users', function () {
 
 ////////////////////////////////////// End Shop Template Route /////////////////////////////////////
 
-Route::get("home",[TemplateController::class,"home"]);
-Route::get("products",[TemplateController::class,"product"]);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+////////////////////////////// Test Routes End //////////////////////////////////
+
+Route::get("/",[App\Http\Controllers\IndexController::class,"home"]);
+Route::get("shops",[App\Http\Controllers\ShopController::class,"shops"]);
+Route::get("categories",[App\Http\Controllers\ShopController::class,"shopCategories"]);
+Route::get("shop/{shop_url}",[App\Http\Controllers\ShopController::class,"shopHome"]);
+Route::get("products/{shop_url}",[App\Http\Controllers\ProductController::class,"shopProducts"]);
+
+
+//////////////////////////////////// Shop Routes /////////////////////////////////////
+
+Route::prefix('shop')->group(function () {
+    
+});
+
+//////////////////////////////////// Customer Routes //////////////////////////////////
+
+Route::prefix('customer')->group(function () {
+    
+});

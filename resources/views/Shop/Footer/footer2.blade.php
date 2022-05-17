@@ -89,10 +89,10 @@
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
-                        <a href="{{url('home')}}">Home</a>
+                        <a href="{{url('shop/'.$shopProfile->shop_url)}}">Home</a>
                     </li>
                     <li>
-                        <a href="{{url('products')}}">Shop</a>
+                        <a href="{{url('products/'.$shopProfile->shop_url)}}">Products</a>
                     </li>
                     <li>
                         <a href="#">Contact us</a>
@@ -217,19 +217,19 @@
     </div><!-- End .modal -->
 
     <!-- Plugins JS File -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.hoverIntent.min.js"></script>
-    <script src="assets/js/jquery.waypoints.min.js"></script>
-    <script src="assets/js/superfish.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/bootstrap-input-spinner.js"></script>
-    <script src="assets/js/jquery.plugin.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.hoverIntent.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('assets/js/superfish.min.js')}}"></script>
+    <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap-input-spinner.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.plugin.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script>
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/demos/demo-6.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/demos/demo-6.js')}}"></script>
 </body>
 
 

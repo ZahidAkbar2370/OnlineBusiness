@@ -12,6 +12,8 @@ class Template extends Model
     protected $table = "templates";
 
     protected $fillable = [
+        "user_id",
         'template_name',
+        "publication_status",
     ];
 }

@@ -60,55 +60,62 @@
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
-                        <a href="#" class="wishlist-link">
-                            <i class="icon-heart-o"></i>
-                            <span class="wishlist-count">0</span>
-                            <span class="wishlist-txt">My Wishlist</span>
-                        </a>
-
-                        <div class="dropdown cart-dropdown">
-                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                                <i class="icon-shopping-cart"></i>
-                                <span class="cart-count">0</span>
-                                <span class="cart-txt">$ 00</span>
+                        @if(!empty(auth()->user()) && auth()->user()->role == "customer")
+                            <a href="#" class="wishlist-link">
+                                <i class="icon-heart-o"></i>
+                                <span class="wishlist-count">0</span>
+                                <span class="wishlist-txt">My Wishlist</span>
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="dropdown-cart-products">
-                                    <div class="product">
-                                        <div class="product-cart-details">
-                                            <h4 class="product-title">
-                                                <a href="#">Beige knitted elastic runner shoes</a>
-                                            </h4>
+                            <div class="dropdown cart-dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                    <i class="icon-shopping-cart"></i>
+                                    <span class="cart-count">0</span>
+                                    <span class="cart-txt">$ 00</span>
+                                </a>
 
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $84.00
-                                            </span>
-                                        </div><!-- End .product-cart-details -->
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-cart-products">
+                                        <div class="product">
+                                            <div class="product-cart-details">
+                                                <h4 class="product-title">
+                                                    <a href="#">Beige knitted elastic runner shoes</a>
+                                                </h4>
 
-                                        <figure class="product-image-container">
-                                            <a href="#" class="product-image">
-                                                <img src="{{asset('assets/images/products/cart/product-1.jpg')}}" alt="product">
-                                            </a>
-                                        </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                    </div><!-- End .product -->
+                                                <span class="cart-product-info">
+                                                    <span class="cart-product-qty">1</span>
+                                                    x $84.00
+                                                </span>
+                                            </div><!-- End .product-cart-details -->
 
-                                </div><!-- End .cart-product -->
+                                            <figure class="product-image-container">
+                                                <a href="#" class="product-image">
+                                                    <img src="{{asset('assets/images/products/cart/product-1.jpg')}}" alt="product">
+                                                </a>
+                                            </figure>
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                        </div><!-- End .product -->
 
-                                <div class="dropdown-cart-total">
-                                    <span>Total</span>
+                                    </div><!-- End .cart-product -->
 
-                                    <span class="cart-total-price">$00</span>
-                                </div><!-- End .dropdown-cart-total -->
+                                    <div class="dropdown-cart-total">
+                                        <span>Total</span>
 
-                                <div class="dropdown-cart-action">
-                                    <a href="#" class="btn btn-primary">View Cart</a>
-                                    <a href="#" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
-                                </div><!-- End .dropdown-cart-total -->
-                            </div><!-- End .dropdown-menu -->
-                        </div><!-- End .cart-dropdown -->
+                                        <span class="cart-total-price">$00</span>
+                                    </div><!-- End .dropdown-cart-total -->
+
+                                    <div class="dropdown-cart-action">
+                                        <a href="#" class="btn btn-primary">View Cart</a>
+                                        <a href="#" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
+                                    </div><!-- End .dropdown-cart-total -->
+                                </div><!-- End .dropdown-menu -->
+                            </div><!-- End .cart-dropdown -->
+                        @else
+                            <a href="#" class="wishlist-link">
+                                <a href="{{route('login')}}" style="color:rgb(17, 8, 8) ;margin-right: 8px">Login</a>
+                                <a href="{{route('register')}}" style="color:rgb(22, 10, 10) ;">Register</a>
+                            </a>
+                        @endif
                     </div>
                 </div><!-- End .container -->
             </div><!-- End .header-middle -->

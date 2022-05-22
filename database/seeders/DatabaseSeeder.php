@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             ShopProfileSeeder::class,
             ShopCategorySeeder::class,
             TemplateSeeder::class,
+            CustomerSeeder::class,
             // UserSeeder::class,
         ]);
     }

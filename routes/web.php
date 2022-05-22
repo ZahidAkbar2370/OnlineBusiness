@@ -68,18 +68,28 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 ////////////////////////////// Test Routes End //////////////////////////////////
+////////////////////////////// App Routes //////////////////////////////////////
 
 Route::get("/",[App\Http\Controllers\IndexController::class,"home"]);
 Route::get("shops",[App\Http\Controllers\ShopController::class,"shops"]);
-Route::get("categories",[App\Http\Controllers\ShopController::class,"shopCategories"]);
+Route::get("shops/category/{id}",[App\Http\Controllers\ShopController::class,"shopCategoryWise"]);
 Route::get("shop/{shop_url}",[App\Http\Controllers\ShopController::class,"shopHome"]);
 Route::get("products/{shop_url}",[App\Http\Controllers\ProductController::class,"shopProducts"]);
+Route::get("categories",[App\Http\Controllers\ShopController::class,"shopCategories"]);
+
 
 
 //////////////////////////////////// Shop Routes /////////////////////////////////////
 
-Route::prefix('shop')->group(function () {
-    
+Route::get("shop-signup",[App\Http\Controllers\Shop\RegisterController::class,"signUp"]);
+Route::post("shop-signup",[App\Http\Controllers\Shop\RegisterController::class,"register"]);
+
+Route::get('/404', function () {
+    return view('App.Pages.404');
+});
+Route::prefix('shop-')->group(function () {
+    Route::get("dashboard",[App\Http\Controllers\Shop\DashboardController::class,"dashboard"]);
+    Route::get("view-brands",[App\Http\Controllers\Shop\BrandController::class,"index"]);
 });
 
 //////////////////////////////////// Customer Routes //////////////////////////////////

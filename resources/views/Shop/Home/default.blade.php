@@ -16,7 +16,7 @@
                             <h3 class="intro-subtitle text-primary">SEASONAL PICKS</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title">Get All <br>The Good Stuff</h1><!-- End .intro-title -->
 
-                            <a href="category.html" class="btn btn-outline-primary-2">
+                            <a href="#" class="btn btn-outline-primary-2">
                                 <span>DISCOVER MORE</span>
                                 <i class="icon-long-arrow-right"></i>
                             </a>
@@ -28,7 +28,7 @@
                             <h3 class="intro-subtitle text-primary">all at 50% off</h3><!-- End .h3 intro-subtitle -->
                             <h1 class="intro-title text-white">The Most Beautiful <br>Novelties In Our Shop</h1><!-- End .intro-title -->
 
-                            <a href="category.html" class="btn btn-outline-primary-2 min-width-sm">
+                            <a href="#" class="btn btn-outline-primary-2 min-width-sm">
                                 <span>SHOP NOW</span>
                                 <i class="icon-long-arrow-right"></i>
                             </a>

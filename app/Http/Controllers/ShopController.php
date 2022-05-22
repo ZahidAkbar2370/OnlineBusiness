@@ -42,4 +42,15 @@ class ShopController extends Controller
 
         return view("App.Pages.categories",["shopCategories" => $shopCategories]);
     }
+
+    public function shopCategoryWise($id)
+    {
+        $all_shops = ShopProfile::orderBy("id", "DESC")
+                        ->where("shop_category_id", $id)
+                        ->where("publication_status", "1")
+                        ->with("ShopCategory")
+                        ->get();
+
+        return view("App.Pages.shops",["all_shops" => $all_shops]);
+    }
 }

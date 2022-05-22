@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(!empty(auth()->user()) && auth()->user()->role == "shop_owner"){
+            return redirect('shop-/dashboard');
+        }
+        elseif(!empty(auth()->user()) && auth()->user()->role == "customer"){
+            return redirect('cutomer/my-account');
+        }
+        elseif(!empty(auth()->user()) && auth()->user()->role == "super_admin"){
+            return redirect('admin-panel/dashboard');
+        }
+        else{
+            return redirect('404'); 
+        }
+        // return view('home');
     }
 }

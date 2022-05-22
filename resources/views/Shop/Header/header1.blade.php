@@ -76,6 +76,7 @@
                             </form>
                         </div><!-- End .header-search -->
 
+                        @if(!empty(auth()->user()) && auth()->user()->role == "customer")
                         <a href="#" class="wishlist-link">
                             <i class="icon-heart-o"></i>
                         </a>
@@ -124,6 +125,12 @@
                                 </div><!-- End .dropdown-cart-total -->
                             </div><!-- End .dropdown-menu -->
                         </div><!-- End .cart-dropdown -->
+                        @else
+                            <a href="#" class="wishlist-link">
+                                <a href="{{route('login')}}" style="color:rgb(218, 214, 214) ;margin-right: 8px">Login</a>
+                                <a href="{{route('register')}}" style="color:rgb(233, 227, 227) ;">Register</a>
+                            </a>
+                        @endif
                     </div><!-- End .header-right -->
                 </div><!-- End .container-fluid -->
             </div><!-- End .header-middle -->

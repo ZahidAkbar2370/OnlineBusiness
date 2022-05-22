@@ -7,11 +7,11 @@
         <div class="intro-slider owl-carousel owl-simple owl-nav-inside owl-light" data-toggle="owl" data-owl-options='{"nav":false, "dots": false, "loop": false}'>
             <div class="intro-slide" style="background-image: url({{asset('assets/images/demos/demo-15/slider/slide-1.jpg')}});">
                 <div class="container intro-content text-center">
-                    <h3 class="intro-subtitle">Want to know what's hot?</h3><!-- End .h3 intro-subtitle -->
-                    <h1 class="intro-title text-white">Spring Lookbook 2022</h1><!-- End .intro-title -->
+                    <h3 class="intro-subtitle">Want to Sale Product Online?</h3><!-- End .h3 intro-subtitle -->
+                    <h1 class="intro-title text-white">Welcome To Online Layyah</h1><!-- End .intro-title -->
 
-                    <a href="#scroll-to-content" class="btn btn-outline-primary-2 scroll-to">
-                        <span>Start scrolling</span>
+                    <a href="{{url('shop-signup')}}" class="btn btn-outline-primary-2 scroll-to">
+                        <span>Become a Seller</span>
                         <i class="icon-long-arrow-down"></i>
                     </a>
                 </div><!-- End .intro-content -->
@@ -32,7 +32,7 @@
                 @if($shop_categories)
                 @foreach($shop_categories as $shop_category)
                 <div class="col-6 col-sm-4 col-lg-2">
-                    <a href="#" class="cat-block">
+                    <a href="{{url('shops/category/'.$shop_category->id)}}" class="cat-block">
                         <figure>
                             <span>
                                 <img src="{{$shop_category->image}}" style="width: 131px !important; height: 76px !important;"  alt="Category image">

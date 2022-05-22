@@ -320,20 +320,20 @@
     @yield('content')
 
     <!-- jquery vendor -->
-    <script src="shop_backend_panel/assets/js/lib/jquery.min.js"></script>
-    <script src="shop_backend_panel/assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/jquery.min.js')}}"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/jquery.nanoscroller.min.js')}}"></script>
     <!-- nano scroller -->
-    <script src="shop_backend_panel/assets/js/lib/menubar/sidebar.js"></script>
-    <script src="shop_backend_panel/assets/js/lib/preloader/pace.min.js"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/menubar/sidebar.js')}}"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/preloader/pace.min.js')}}"></script>
     <!-- sidebar -->
 
-    <script src="shop_backend_panel/assets/js/lib/bootstrap.min.js"></script>
-    <script src="shop_backend_panel/assets/js/scripts.js"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/bootstrap.min.js')}}"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/scripts.js')}}"></script>
     <!-- bootstrap -->
 
-    <script src="shop_backend_panel/assets/js/lib/calendar-2/moment.latest.min.js"></script>
-    <script src="shop_backend_panel/assets/js/lib/calendar-2/pignose.calendar.min.js"></script>
-    <script src="shop_backend_panel/assets/js/lib/calendar-2/pignose.init.js"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/calendar-2/moment.latest.min.js')}}"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/calendar-2/pignose.calendar.min.js')}}"></script>
+    <script src="{{asset('shop_backend_panel/assets/js/lib/calendar-2/pignose.init.js')}}"></script>
 
 
     {{-- datatable --}}

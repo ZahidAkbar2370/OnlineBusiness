@@ -31,10 +31,15 @@
             <h1 class="error-title">Access Error</h1><!-- End .error-title -->
             <p>We are sorry, The URL You've Requested is not Available For You.</p>
             <p>You are In-Active please contact With Admin. Thanks</p>
-            <a href="{{url('/')}}" class="btn btn-outline-primary-2 btn-minwidth-lg">
-                <span>BACK TO HOMEPAGE</span>
-                <i class="icon-long-arrow-right"></i>
-            </a>
+            <form action="{{route('logout')}}" method="POST">
+                @csrf
+                <a href="{{url('/')}}" class="btn btn-outline-primary-2 btn-minwidth-lg">
+                    <span>Back To Home</span>
+                    <i class="icon-long-arrow-right"></i>
+                </a>
+                <input type="submit" value="Logout" class="btn btn-outline-primary-2 btn-minwidth-lg"/>
+            </form>
+            
         </div><!-- End .container -->
     </div><!-- End .error-content text-center -->
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TemplateController;
+use App\Http\Middleware\ShopMiddleware;
 use Illuminate\Support\Facades\Route;
 
 
@@ -87,9 +88,23 @@ Route::post("shop-signup",[App\Http\Controllers\Shop\RegisterController::class,"
 Route::get('/404', function () {
     return view('App.Pages.404');
 });
-Route::prefix('shop-')->group(function () {
-    Route::get("dashboard",[App\Http\Controllers\Shop\DashboardController::class,"dashboard"]);
-    Route::get("view-brands",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+
+Route::middleware([ShopMiddleware::class])->group(function () {
+    Route::prefix('shop-')->group(function () {
+
+        Route::get('/profile', function () {
+            return view('Shop.BackendPanel.Profile.profile');
+        });
+
+        Route::get('/change-password', function () {
+            return view('Shop.BackendPanel.ChangePassword.change_password');
+        });
+
+        Route::get("view-templates",[App\Http\Controllers\Shop\TemplateController::class,"index"]);
+        Route::get("active-template/{template_id}",[App\Http\Controllers\Shop\TemplateController::class,"active"]);
+        Route::get("dashboard",[App\Http\Controllers\Shop\DashboardController::class,"dashboard"]);
+        Route::get("view-brands",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+    });
 });
 
 //////////////////////////////////// Customer Routes //////////////////////////////////

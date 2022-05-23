@@ -258,14 +258,21 @@
 
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">John
+                                <span class="user-avatar">{{Auth::user()->name ?? 'Jhon'}}
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-content-body">
                                         <ul>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('shop-/template-setting')}}">
+                                                    <i class="ti-settings"></i>
+                                                    <span>Template Setting</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{url('shop-/profile')}}">
                                                     <i class="ti-user"></i>
                                                     <span>Profile</span>
                                                 </a>
@@ -292,7 +299,7 @@
                                             </li> --}}
 
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('shop-/change-password')}}">
                                                     <i class="ti-lock"></i>
                                                     <span>Change Password</span>
                                                 </a>

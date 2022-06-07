@@ -45,13 +45,13 @@ Route::get('/carts', function () {
     return view('Shop.Pages.carts');
 });
 
-Route::get('/shop-layout', function () {
-    return view('Shop.BackendPanel.layout');
-});
+// Route::get('/shop-layout', function () {
+//     return view('Shop.BackendPanel.layout');
+// });
 
-Route::get('/shop-panel', function () {
-    return view('Shop.BackendPanel.Dashboard.dashboard');
-});
+// Route::get('/shop-panel', function () {
+//     return view('Shop.BackendPanel.Dashboard.dashboard');
+// });
 
 Route::get('/shop-add-user', function () {
     return view('Shop.BackendPanel.User.add_user');
@@ -103,7 +103,36 @@ Route::middleware([ShopMiddleware::class])->group(function () {
         Route::get("view-templates",[App\Http\Controllers\Shop\TemplateController::class,"index"]);
         Route::get("active-template/{template_id}",[App\Http\Controllers\Shop\TemplateController::class,"active"]);
         Route::get("dashboard",[App\Http\Controllers\Shop\DashboardController::class,"dashboard"]);
+//
+// Shop Brands
+// 
+        Route::get("add-brand",[App\Http\Controllers\Shop\BrandController::class,"create"]);
+        Route::post("save-brand",[App\Http\Controllers\Shop\BrandController::class,"store"]);
         Route::get("view-brands",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+        Route::get("active-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+        Route::get("inactive-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+        Route::get("edit-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+        Route::get("delete-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+//
+// Shop Categories
+// 
+        Route::get("create-category",[App\Http\Controllers\Shop\CategoryController::class,"create"]);
+        Route::post("save-category",[App\Http\Controllers\Shop\CategoryController::class,"store"]);
+        Route::get("view-categories",[App\Http\Controllers\Shop\CategoryController::class,"index"]);
+        Route::get("active-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"activeCategory"]);
+        Route::get("inactive-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"inactiveCategory"]);
+        Route::get("edit-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"editCategory"]);
+        Route::get("delete-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"deleteCategory"]);
+//
+// Shop Products
+// 
+        Route::get("create-product",[App\Http\Controllers\Shop\ProductController::class,"create"]);
+        Route::post("save-product",[App\Http\Controllers\Shop\ProductController::class,"store"]);
+        Route::get("view-products",[App\Http\Controllers\Shop\ProductController::class,"index"]);
+        Route::get("active-product/{id}",[App\Http\Controllers\Shop\ProductController::class,"activeProduct"]);
+        Route::get("inactive-product/{id}",[App\Http\Controllers\Shop\ProductController::class,"inactiveProduct"]);
+        Route::get("edit-product/{id}",[App\Http\Controllers\Shop\ProductController::class,"editProduct"]);
+        Route::get("delete-product/{id}",[App\Http\Controllers\Shop\ProductController::class,"deleteProduct"]);
     });
 });
 

@@ -357,7 +357,7 @@
 
                 <div class="products">
                     <div class="row justify-content-center">
-                        @if($products)
+                        @if(!empty($products))
                         @foreach($products as $product)
                         <div class="col-6 col-md-4 col-lg-3">
                             <div class="product product-7 text-center">

@@ -18,7 +18,7 @@
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
-                    <a href="{{url('shop-/add-brands')}}"><button class="btn btn-primary">Add New Brand</button></a>
+                    <a href="{{url('shop-/create-category')}}"><button class="btn btn-primary">Add New Category</button></a>
                             
                             <div class="card">
                                 <div class="bootstrap-data-table-panel">
@@ -27,7 +27,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Sr #</th>
-                                                    <th>Brand Name</th>
+                                                    <th>Category Name</th>
                                                     <th>Optional</th>
                                                     <th>Publication Status</th>
                                                     <th>Action</th>
@@ -44,14 +44,14 @@
                                                     <a href="#" class="btn btn-success">Active</a></td>
                                                     
                                                 </tr> --}}
-                                                @if(!empty($all_brands))
-                                                @foreach($all_brands as $key => $brand)
+                                                @if(!empty($all_categories))
+                                                @foreach($all_categories as $key => $category)
                                                 <tr>
                                                     <td>{{$key+1}}</td>
-                                                    <td>{{$brand->brand_name}}</td>
-                                                    <td>{{$brand->optional}}</td>
+                                                    <td>{{$category->category_name}}</td>
+                                                    <td>{{$category->optional}}</td>
                                                     
-                                                    @if($brand->publication_status == "1")
+                                                    @if($category->publication_status == "1")
                                                         <td>Active</td>
                                                     @else
                                                         <td>In-Active</td>
@@ -59,14 +59,14 @@
                                                     
                                                     <td>
 
-                                                        @if($brand->status == "1")
-                                                            <a href="{{url('shop-/active-brand/'.$brand->id)}}" class="btn btn-danger">InActive</a>
+                                                        @if($category->status == "1")
+                                                            <a href="{{url('shop-/active-category/'.$category->id)}}" class="btn btn-danger">InActive</a>
                                                         @else
-                                                            <a href="{{url('shop-/inactive-brand/'.$brand->id)}}" class="btn btn-success">Active</a>
+                                                            <a href="{{url('shop-/inactive-category/'.$category->id)}}" class="btn btn-success">Active</a>
                                                         @endif
 
-                                                        <a href="{{url('shop-/edit-brand/'.$brand->id)}}" class="btn btn-info">Edit</a>
-                                                        <a href="{{url('shop-/delete-brand/'.$brand->id)}}" class="btn btn-danger">Delete</a>
+                                                        <a href="{{url('shop-/edit-category/'.$category->id)}}" class="btn btn-info">Edit</a>
+                                                        <a href="{{url('shop-/delete-category/'.$category->id)}}" class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr>
                                                 @endforeach

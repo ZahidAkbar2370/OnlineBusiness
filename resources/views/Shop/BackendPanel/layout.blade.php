@@ -60,18 +60,27 @@
                     </li> --}}
 
                     <li class="label">Apps</li>
-                    {{-- <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Charts <span
+
+                     <li>
+                        <a href="{{url('shop-/view-medias')}}"><i class="ti-home"></i> Medias </a>
+                    </li>
+
+                    <li>
+                        <a href="{{url('shop-/view-brands')}}"><i class="ti-home"></i>Brands </a>
+                    </li>
+
+                    <li>
+                        <a href="{{url('shop-/view-categories')}}"><i class="ti-home"></i>Categories </a>
+                    </li>
+
+                    <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Settings <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="chart-flot.html">Flot</a></li>
-                            <li><a href="chart-morris.html">Morris</a></li>
-                            <li><a href="chartjs.html">Chartjs</a></li>
-                            <li><a href="chartist.html">Chartist</a></li>
-                            <li><a href="chart-peity.html">Peity</a></li>
-                            <li><a href="chart-sparkline.html">Sparkle</a></li>
-                            <li><a href="chart-knob.html">Knob</a></li>
+                            <li><a href="{{url('shop-/profile')}}">Profile</a></li>
+                            <li><a href="{{url('shop-/view-templates')}}">Templates</a></li>
+                            <li><a href="{{url('shop-/change-password')}}">Change Password</a></li>
                         </ul>
-                    </li> --}}
+                    </li>
                     {{-- <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li> --}}
                     {{-- <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li> --}}
                     {{-- <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li> --}}
@@ -265,7 +274,7 @@
                                     <div class="dropdown-content-body">
                                         <ul>
                                             <li>
-                                                <a href="{{url('shop-/template-setting')}}">
+                                                <a href="{{url('shop-/view-templates')}}">
                                                     <i class="ti-settings"></i>
                                                     <span>Template Setting</span>
                                                 </a>

@@ -82,13 +82,12 @@
                         </a>
 
                         <div class="dropdown cart-dropdown">
-                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-display="static">
+                            <a href="{{ url('carts/'.$shopProfile->shop_url) }}"  class="dropdown-toggle" role="button">
                                 <i class="icon-shopping-cart"></i>
-                                <span class="cart-count">0</span>
+                                <span class="cart-count">{{ count(session()->get('cart')) }}</span>
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right">
+                            {{-- <div class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-cart-products">
                                     <div class="product">
                                         <div class="product-cart-details">
@@ -119,11 +118,11 @@
                                 </div><!-- End .dropdown-cart-total -->
 
                                 <div class="dropdown-cart-action">
-                                    <a href="#" class="btn btn-primary">View Cart</a>
+                                    <a href="{{ url('carts/'.$shopProfile->shop_url) }}" class="btn btn-primary">View Cart</a>
                                     <a href="#" class="btn btn-outline-primary-2"><span>Checkout</span><i
                                             class="icon-long-arrow-right"></i></a>
                                 </div><!-- End .dropdown-cart-total -->
-                            </div><!-- End .dropdown-menu -->
+                            </div><!-- End .dropdown-menu --> --}}
                         </div><!-- End .cart-dropdown -->
                         @else
                             <a href="#" class="wishlist-link">

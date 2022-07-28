@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ShopCategorySeeder::class,
             TemplateSeeder::class,
             CustomerSeeder::class,
+            ProductLabelSeeder::class,
             // UserSeeder::class,
         ]);
     }

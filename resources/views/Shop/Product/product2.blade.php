@@ -11,7 +11,7 @@
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
                                     {{-- <span class="product-label label-sale">Sale</span> --}}
-                                    <a href="#">
+                                    <a href="{{ url('productDetail') }}">
                                         <img src="{{asset('')}}{{$product->product_image_1}}" alt="Product image" class="product-image">
                                         <img src="{{asset('')}}{{$product->product_image_2}}" alt="Product image" class="product-image-hover">
                                     </a>

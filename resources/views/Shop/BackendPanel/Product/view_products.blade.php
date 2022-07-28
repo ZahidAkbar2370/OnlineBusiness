@@ -29,20 +29,29 @@
                                                     <th>Sr #</th>
                                                     <th>Category Name</th>
                                                     <th>Brand Name</th>
+                                                    {{-- <th>Lable</th> --}}
                                                     <th>Product Name</th>
                                                     <th>Sale Price</th>
+                                                    <th>Discount Price</th>
+                                                    <th>Product Image</th>
                                                     <th>Publication Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if(!empty($all_prouducts))
-                                                @foreach($all_prouducts as $key => $product)
+                                                @if(!empty($all_products))
+                                                @foreach($all_products as $key => $product)
                                                 <tr>
                                                     <td>{{$key+1}}</td>
-                                                    <td>{{$product->category->category_name}}</td>
-                                                    <td>{{$product->brand->brand_name}}</td>
+                                                    <td>{{$product->ProductCategory->p_category_name ?? ""}}</td>
+                                                    <td>{{$product->brand->brand_name ?? ""}}</td>
                                                     <td>{{$product->product_name}}</td>
+                                                    <td>{{$product->product_sale_price}}</td>
+                                                    <td>{{$product->product_discount_price}}</td>
+                                                    <td>
+                                                        <img src="{{asset('')}}{{$product->product_image_1}}" style="width: 60px;height: 60px;">
+                                                        <img src="{{asset('')}}{{$product->product_image_2}}" style="width: 60px;height: 60px;">
+                                                    </td>
                                                     
                                                     @if($product->publication_status == "1")
                                                         <td>Active</td>
@@ -52,7 +61,7 @@
                                                     
                                                     <td>
 
-                                                        @if($product->status == "1")
+                                                        @if($product->publication_status == "1")
                                                             <a href="{{url('shop-/active-product/'.$product->id)}}" class="btn btn-danger">InActive</a>
                                                         @else
                                                             <a href="{{url('shop-/inactive-product/'.$product->id)}}" class="btn btn-success">Active</a>

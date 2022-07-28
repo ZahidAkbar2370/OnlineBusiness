@@ -1,4 +1,4 @@
-@include('Shop.Header.header2')
+@extends('Admin.layout')
 <main class="main">
     <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         <div class="container">
@@ -136,5 +136,3 @@
         </div><!-- End .dashboard -->
     </div><!-- End .page-content -->
 </main><!-- End .main -->
-
-@include('Shop.Footer.footer2')

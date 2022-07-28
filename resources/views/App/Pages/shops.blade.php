@@ -35,34 +35,34 @@
 
                     @if(!empty($all_shops))
                     @foreach($all_shops as $shop)
-                    <div class="col-12 col-md-3 mb-5">
-                        <div class="product product-4">
-                            <figure class="product-media">
-                                <a href="{{url('shop/'.$shop->shop_url)}}">
-                                    <img src="{{$shop->profile_image}}" alt="Product image" class="product-image">
-                                    <img src="{{$shop->cover_photo}}" alt="Product image" class="product-image-hover">
-                                </a>
+                        <div class="col-12 col-md-3 mb-5">
+                            <div class="product product-4">
+                                <figure class="product-media">
+                                    <a href="{{url('shop/'.$shop->shop_url)}}">
+                                        <img src="{{$shop->profile_image}}" alt="Product image" class="product-image">
+                                        <img src="{{$shop->cover_photo}}" alt="Product image" class="product-image-hover">
+                                    </a>
 
-                                {{-- <div class="product-action-vertical">
-                                    <a href="#"><span class="active">add to wishlist</span></a>
-                                   
-                                </div><!-- End .product-action --> --}}
+                                    {{-- <div class="product-action-vertical">
+                                        <a href="#"><span class="active">add to wishlist</span></a>
+                                    
+                                    </div><!-- End .product-action --> --}}
 
-                                <div class="product-action">
-                                    <a href="{{url('shop/'.$shop->shop_url)}}" class="btn-product btn-cart"><span>Visit Shop</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
+                                    <div class="product-action">
+                                        <a href="{{url('shop/'.$shop->shop_url)}}" class="btn-product btn-cart"><span>Visit Shop</span></a>
+                                    </div><!-- End .product-action -->
+                                </figure><!-- End .product-media -->
 
-                            <div class="product-body">
-                                <div class="product-price">
-                                    <strong>{{$shop->ShopCategory->shop_category_name ?? "category_name"}}</strong>
-                                </div><!-- End .product-price -->
-                                <h3 class="product-title"><a href="{{url('shop/'.$shop->shop_url)}}">{{$shop->shop_name}}</a></h3><!-- End .product-title -->
-                                
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                    </div><!-- End .col-sm-6 -->
-                    @endforeach
+                                <div class="product-body">
+                                    <div class="product-price">
+                                        <strong>{{$shop->ShopCategory->shop_category_name ?? "category_name"}}</strong>
+                                    </div><!-- End .product-price -->
+                                    <h3 class="product-title"><a href="{{url('shop/'.$shop->shop_url)}}">{{$shop->shop_name}}</a></h3><!-- End .product-title -->
+                                    
+                                </div><!-- End .product-body -->
+                            </div><!-- End .product -->
+                        </div><!-- End .col-sm-6 -->
+                        @endforeach
                     @endif
                     {{-- <div class="col-12 col-md-3">
                         <div class="product product-4">

@@ -2,6 +2,14 @@
 
 <div class="mt-7"></div>
 <div class="container pt-6 new-arrivals">
+
+    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div> 
+                    @endif
+
+                    
                 <div class="heading heading-center mb-3">
                     <h2 class="title">New Arrivals</h2><!-- End .title -->
                 </div><!-- End .heading -->
@@ -13,10 +21,16 @@
                             <div class="row justify-content-center">
                                 @if(!empty($products))
                                 @foreach($products as $product)
+
+                                {{-- <input type="text" value="{{ $product->product_name }}" name="product_name" id="product_name">
+                                <input type="text" value="{{ $product->product_image_1 }}" name="product_image_1" id="product_image_1">
+                                <input type="text" value="{{ $product->product_sale_price - $product->product_discount_price }}" name="product_price" id="product_price">
+                                <input type="text" value="{{ $shopProfile->shop_url }}" name="shop_url" id="shop_url">
+                                 --}}
                                 <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="{{ url('productDetail') }}">
                                                 <img src="{{asset('')}}{{$product->product_image_1}}"
                                                     alt="Product image" class="product-image">
                                                 <img src="{{asset('')}}{{$product->product_image_2}}"
@@ -29,7 +43,7 @@
                                             </div><!-- End .product-action -->
 
                                             <div class="product-action product-action-transparent">
-                                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                                <a href="{{ url('add-to-cart/'.$product->id) }}" class="btn-product btn-cart"><span>add to cart</span></a>
                                             </div><!-- End .product-action -->
                                         </figure><!-- End .product-media -->
 
@@ -37,7 +51,7 @@
                                             <div class="product-cat">
                                                 <a href="#">{{$product->ProductCategory->p_category_name ?? "category"}}</a>
                                             </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="#">{{$product->product_name}}</a></h3>
+                                            <h3 class="product-title"><a href="{{ url('productDetail') }}">{{$product->product_name}}</a></h3>
                                             <!-- End .product-title -->
                                             <div class="product-price">
                                                 PKR{{$product->product_sale_price - $product->product_discount_price}}

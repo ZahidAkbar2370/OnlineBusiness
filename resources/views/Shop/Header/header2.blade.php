@@ -67,14 +67,14 @@
                                 <span class="wishlist-txt">My Wishlist</span>
                             </a>
 
-                            <div class="dropdown cart-dropdown">
-                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                            <div class="dropdown">
+                                <a href="{{ url('carts/'.$shopProfile->shop_url) }}"  class="dropdown-toggle" role="button">
                                     <i class="icon-shopping-cart"></i>
-                                    <span class="cart-count">0</span>
+                                    <span class="cart-count">{{ count(session()->get('cart')) }}</span>
                                     <span class="cart-txt">$ 00</span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right">
+                                {{-- <div class="dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-cart-products">
                                         <div class="product">
                                             <div class="product-cart-details">
@@ -93,7 +93,7 @@
                                                     <img src="{{asset('assets/images/products/cart/product-1.jpg')}}" alt="product">
                                                 </a>
                                             </figure>
-                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                            <a href="{{ url('carts/'.$shopProfile->shop_url) }}" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
                                         </div><!-- End .product -->
 
                                     </div><!-- End .cart-product -->
@@ -108,7 +108,7 @@
                                         <a href="#" class="btn btn-primary">View Cart</a>
                                         <a href="#" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .dropdown-cart-total -->
-                                </div><!-- End .dropdown-menu -->
+                                </div><!-- End .dropdown-menu --> --}}
                             </div><!-- End .cart-dropdown -->
                         @else
                             <a href="#" class="wishlist-link">

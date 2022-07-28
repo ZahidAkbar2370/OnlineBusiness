@@ -163,6 +163,14 @@
             
             
             <div class="container recent-arrivals">
+
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div> 
+                    @endif
+
+
                 <div class="heading heading-flex align-items-center mb-3">
                     <h2 class="title title-lg">Recent Arrivals</h2><!-- End .title -->
                 </div><!-- End .heading -->
@@ -172,12 +180,18 @@
                         <div class="products">
                             <div class="row justify-content-center">
                                 @if(!empty($products))
-                                @foreach($products as $product)
+                                @foreach($products as $key => $product)
+
+                                {{-- <input type="hidden" value="{{ $product->product_name }}" name="product_name[]" id="product_name">
+                                <input type="hidden" value="{{ $product->product_image_1 }}" name="product_image_1[]" id="product_image_1">
+                                <input type="hidden" value="{{ $product->product_sale_price - $product->product_discount_price }}" name="product_price" id="product_price[]">
+                                <input type="hidden" value="{{ $shopProfile->shop_url }}" name="shop_url[]" id="shop_url"> --}}
+
                                 <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             {{-- <span class="product-label label-sale">Sale</span> --}}
-                                            <a href="#">
+                                            <a href="{{ url('productDetail') }}">
                                                 <img src="{{asset('')}}{{$product->product_image_1}}" alt="Product image" class="product-image">
                                                 <img src="{{asset('')}}{{$product->product_image_2}}" alt="Product image" class="product-image-hover">
                                             </a>
@@ -187,7 +201,7 @@
                                             </div><!-- End .product-action-vertical -->
 
                                             <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                                <a href="{{ url('add-to-cart/'.$product->id) }}" class="btn-product btn-cart"><span>add to cart</span></a>
                                             </div><!-- End .product-action -->
                                         </figure><!-- End .product-media -->
 
@@ -195,7 +209,7 @@
                                             <div class="product-cat">
                                                 <a href="#">{{$product->ProductCategory->p_category_name ?? "category_name"}}</a>
                                             </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="#">{{$product->product_name}}</a></h3><!-- End .product-title -->
+                                            <h3 class="product-title"><a href="{{ url('productDetail') }}">{{$product->product_name}}</a></h3><!-- End .product-title -->
                                             <div class="product-price">
                                                 <span class="new-price">Now PKR{{$product->product_sale_price - $product->product_discount_price}}</span>
                                                 <span class="old-price">Was PKR {{$product->product_sale_price}}</span>
@@ -500,3 +514,14 @@
             </div><!-- End .container -->
              
         </main><!-- End .main -->
+
+
+
+        {{-- <script>
+            
+            function addToCart(id){
+                var product_name = document.getElementById('product_name').value();
+                alert(product_name);
+            }
+
+        </script> --}}

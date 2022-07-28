@@ -54,6 +54,9 @@
                                 <li class="megamenu-container active">
                                     <a href="{{url('/')}}">Home</a>
                                 </li>
+                                <li class="megamenu-container">
+                                    <a href="{{url('products')}}">Products</a>
+                                </li>
                                 <li>
                                     <a  href="{{url('shops')}}" class="sf-with-ul">Shops</a>
                                     <ul>
@@ -90,18 +93,22 @@
                         </div><!-- End .header-search --> --}}
 
                         @if(!empty(auth()->user()) && auth()->user()->role == "customer")
-                            <a href="#" class="wishlist-link">
-                                <i class="icon-heart-o"></i>
+                            <a href="{{ url('customer/my-account') }}" class="wishlist-link">
+                                <i class="icon-user" style="font-size: 50px"></i>
+                                <span>My Account</span>
                             </a>
+
+                            {{-- <a href="#" class="icon-unlock-alt">
+                                <i class="icon-unlock"></i>
+                            </a> --}}
                             
                             <div class="dropdown cart-dropdown">
-                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" data-display="static">
+                                {{-- <a href="{{ url('carts') }}" class="dropdown-toggle" role="button">
                                     <i class="icon-shopping-cart"></i>
                                     <span class="cart-count">0</span>
-                                </a>
+                                </a> --}}
 
-                                <div class="dropdown-menu dropdown-menu-right">
+                                {{-- <div class="dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-cart-products">
                                         <div class="product">
                                             <div class="product-cart-details">
@@ -136,7 +143,7 @@
                                         <a href="#" class="btn btn-outline-primary-2"><span>Checkout</span><i
                                                 class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .dropdown-cart-total -->
-                                </div><!-- End .dropdown-menu -->
+                                </div><!-- End .dropdown-menu --> --}}
                             </div><!-- End .cart-dropdown -->
                         @else
                             <a href="#" class="wishlist-link">

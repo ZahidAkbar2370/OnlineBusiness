@@ -14,7 +14,7 @@
                                 <div class="col-6 col-md-4 col-lg-3">
                                     <div class="product product-2">
                                         <figure class="product-media">
-                                            <a href="#">
+                                            <a href="{{ url('productDetail') }}">
                                                 <img src="{{asset('')}}{{$product->product_image_1}}"
                                                     alt="Product image" class="product-image">
                                                 <img src="{{asset('')}}{{$product->product_image_2}}"

@@ -50,7 +50,7 @@
                                 class="badge badge-primary">2</span> <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="{{url('shop-panel')}}">Dashboard</a></li>
+                            <li><a href="{{url('shop-/dashboard')}}">Dashboard</a></li>
                             <li><a href="{{url('shop-add-user')}}">Add User</a></li>
                             <li><a href="{{url('shop-view-users')}}">View Users</a></li>
                         </ul>
@@ -65,13 +65,23 @@
                         <a href="{{url('shop-/view-medias')}}"><i class="ti-home"></i> Medias </a>
                     </li>
 
-                    <li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Manage Products<span
+                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="{{url('shop-/view-brands')}}">Brands</a></li>
+                            <li><a href="{{url('shop-/view-categories')}}">Product Category</a></li>
+                            <li><a href="{{url('shop-/view-products')}}">Products</a></li>
+                            <li><a href="{{url('shop-/view-lables')}}">Lables</a></li>
+                        </ul>
+                    </li>
+
+                    {{-- <li>
                         <a href="{{url('shop-/view-brands')}}"><i class="ti-home"></i>Brands </a>
                     </li>
 
                     <li>
                         <a href="{{url('shop-/view-categories')}}"><i class="ti-home"></i>Categories </a>
-                    </li>
+                    </li> --}}
 
                     <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Settings <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
@@ -81,6 +91,43 @@
                             <li><a href="{{url('shop-/change-password')}}">Change Password</a></li>
                         </ul>
                     </li>
+
+                    <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Orders <span
+                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="#">New Orders</a></li>
+                            <li><a href="#">Orders History</a></li>
+                            <li><a href="#">Payments</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Reports <span
+                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        {{-- <ul>
+                            <li><a href="#">New Orders</a></li>
+                            <li><a href="#">Orders History</a></li>
+                            <li><a href="#">Payments</a></li>
+                        </ul> --}}
+                    </li>
+
+                    {{-- <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> POS System <span
+                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="#">Supplier</a></li>
+                                    <li><a href="#">Stock</a></li>
+                                    <li><a href="#">Sale (POS)</a></li>
+
+                            <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Reports <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                <ul>
+                                    <li><a href="#">Online Orders</a></li>
+                                    <li><a href="#">Offline Sales</a></li>
+                                    <li><a href="#">Stock</a></li>
+                                    <li><a href="#">Summary</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li> --}}
                     {{-- <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li> --}}
                     {{-- <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li> --}}
                     {{-- <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li> --}}
@@ -163,7 +210,8 @@
                         </ul>
                     </li> --}}
                     {{-- <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li> --}}
-                    <li><a><i class="ti-close"></i> Logout</a></li>
+                    <li>
+                        <a href="{{ url('logout') }}"><i class="ti-close"></i> Logout</a></li>
                 </ul>
             </div>
         </div>

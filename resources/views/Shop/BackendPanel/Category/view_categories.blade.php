@@ -18,7 +18,7 @@
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
-                    <a href="{{url('shop-/create-category')}}"><button class="btn btn-primary">Add New Category</button></a>
+                    <a href="{{url('shop-/add-category')}}"><button class="btn btn-primary">Add New Category</button></a>
                             
                             <div class="card">
                                 <div class="bootstrap-data-table-panel">
@@ -28,28 +28,18 @@
                                                 <tr>
                                                     <th>Sr #</th>
                                                     <th>Category Name</th>
-                                                    <th>Optional</th>
+                                                    {{-- <th>Optional</th> --}}
                                                     <th>Publication Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {{-- <tr>
-                                                    <td>Zahid AKbar</td>
-                                                    <td>janujakhar2370@gmail.com</td></td>
-                                                    <td>Admin</td>
-                                                    <td>Active</td>
-
-                                                    <td><a href="#" class="btn btn-danger">InActive</a>
-                                                    <a href="#" class="btn btn-success">Active</a></td>
-                                                    
-                                                </tr> --}}
                                                 @if(!empty($all_categories))
                                                 @foreach($all_categories as $key => $category)
                                                 <tr>
                                                     <td>{{$key+1}}</td>
-                                                    <td>{{$category->category_name}}</td>
-                                                    <td>{{$category->optional}}</td>
+                                                    <td>{{$category->p_category_name}}</td>
+                                                    {{-- <td>{{$category->optional}}</td> --}}
                                                     
                                                     @if($category->publication_status == "1")
                                                         <td>Active</td>
@@ -59,10 +49,10 @@
                                                     
                                                     <td>
 
-                                                        @if($category->status == "1")
-                                                            <a href="{{url('shop-/active-category/'.$category->id)}}" class="btn btn-danger">InActive</a>
+                                                        @if($category->publication_status == "1")
+                                                            <a href="{{url('shop-/inactive-category/'.$category->id)}}" class="btn btn-danger">InActive</a>
                                                         @else
-                                                            <a href="{{url('shop-/inactive-category/'.$category->id)}}" class="btn btn-success">Active</a>
+                                                            <a href="{{url('shop-/active-category/'.$category->id)}}" class="btn btn-success">Active</a>
                                                         @endif
 
                                                         <a href="{{url('shop-/edit-category/'.$category->id)}}" class="btn btn-info">Edit</a>

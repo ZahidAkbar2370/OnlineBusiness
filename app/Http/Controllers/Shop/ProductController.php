@@ -12,7 +12,11 @@ class ProductController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id ?? "1";
-        $all_products = Product::where("user_id", $user_id)->get();
+
+        $all_products = Product::where("user_id", $user_id)
+                        ->with('ProductCategory')
+                        ->with('brand')
+                        ->get();
 
         return view("Shop.BackendPanel.Product.view_products",["all_products" => $all_products]);
     }

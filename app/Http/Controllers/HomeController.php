@@ -28,7 +28,7 @@ class HomeController extends Controller
             return redirect('shop-/dashboard');
         }
         elseif(!empty(auth()->user()) && auth()->user()->role == "customer"){
-            return redirect('cutomer/my-account');
+            return redirect('customer/my-account');
         }
         elseif(!empty(auth()->user()) && auth()->user()->role == "super_admin"){
             return redirect('admin-panel/dashboard');

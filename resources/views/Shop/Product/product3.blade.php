@@ -16,7 +16,7 @@
                                     <div class="product product-2 text-center">
                                         <figure class="product-media">
                                             {{-- <span class="product-label label-sale">Sale</span> --}}
-                                            <a href="#">
+                                            <a href="{{ url('productDetail') }}">
                                                 <img src="{{asset('')}}{{$product->product_image_1}}" alt="Product image" class="product-image">
                                                 <img src="{{asset('')}}{{$product->product_image_2}}" alt="Product image" class="product-image-hover">
                                             </a>
@@ -26,7 +26,7 @@
                                             </div><!-- End .product-action-vertical -->
 
                                             <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                                <a href="{{ url('add-to-cart/'.$product->id) }}" class="btn-product btn-cart"><span>add to cart</span></a>
                                             </div><!-- End .product-action -->
                                         </figure><!-- End .product-media -->
 

@@ -21,19 +21,20 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    {{-- <h4>Create New User</h4> --}}
-                                    
+                                    @if(Session::has("success"))
+                                        <h4>{{ Session::get("success"); }}</h4>
+                                    @endif
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-elements">
-                                        <form action="#" method="post"  enctype="multipart/form-data">
+                                        <form action="{{ URL::to('shop-/change-password') }}" method="post"  enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
 
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Old Password</label>
-                                                        <input type="password" class="form-control" name="user_name">
+                                                        <input type="password" class="form-control" name="old_password">
                                                     </div>
                                                 </div>
 
@@ -41,7 +42,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>New Passoword</label>
-                                                        <input type="password" class="form-control" name="email">
+                                                        <input type="password" class="form-control" name="new_password">
                                                     </div>
                                                 </div>
 

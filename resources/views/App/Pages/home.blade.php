@@ -116,11 +116,17 @@
             </div><!-- End .heading-left -->
 
            <div class="heading-right">
-                <a href="#" class="title-link">View All Recommendadion <i class="icon-long-arrow-right"></i></a>
+                <a href="{{ url('products') }}" class="title-link">View All Recommendadion <i class="icon-long-arrow-right"></i></a>
            </div><!-- End .heading-right -->
         </div><!-- End .heading -->
 
         <div class="products">
+
+            @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div> 
+                    @endif
             <div class="row justify-content-center">
 
                 @if($products)
@@ -129,7 +135,7 @@
                     <div class="product product-2">
                         <figure class="product-media">
                             {{-- <span class="product-label label-circle label-sale">Sale</span> --}}
-                            <a href="#">
+                            <a href="{{ url('productDetail') }}">
                                 {{-- <img src="{{asset('assets/images/demos/demo-4/products/product-10.jpg')}}" alt="Product image" class="product-image"> --}}
                                 <img src="{{$product->product_image_1}}" alt="Product image" class="product-image">
                             </a>
@@ -139,7 +145,7 @@
                             </div><!-- End .product-action -->
 
                             <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
+                                <a href="{{ url('add-to-cart/'.$product->id) }}" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
                                 <!-- <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a> -->
                             </div><!-- End .product-action -->
                         </figure><!-- End .product-media -->

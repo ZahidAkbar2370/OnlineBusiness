@@ -41,7 +41,7 @@
         <div class="nano">
             <div class="nano-content">
                 <ul>
-                    <div class="logo"><a href="#">
+                    <div class="logo"><a href="{{ url('/') }}">
                             <!-- <img src="shop_backend_panel/assets/images/logo.png" alt="" /> -->
                             <span>Online Layyah</span></a>
                     </div>
@@ -51,8 +51,8 @@
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{url('shop-/dashboard')}}">Dashboard</a></li>
-                            <li><a href="{{url('shop-add-user')}}">Add User</a></li>
-                            <li><a href="{{url('shop-view-users')}}">View Users</a></li>
+                            <li><a href="{{url('shop-/add-user')}}">Add User</a></li>
+                            <li><a href="{{url('shop-/view-users')}}">View Users</a></li>
                         </ul>
                     </li>
                     {{-- <li>
@@ -95,8 +95,8 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Orders <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="#">New Orders</a></li>
-                            <li><a href="#">Orders History</a></li>
+                            <li><a href="{{ url('shop-/view-orders') }}">New Orders</a></li>
+                            <li><a href="{{ url('shop-/view-orders-history') }}">Orders History</a></li>
                             <li><a href="#">Payments</a></li>
                         </ul>
                     </li>

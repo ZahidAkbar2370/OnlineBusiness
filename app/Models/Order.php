@@ -20,6 +20,7 @@ class Order extends Model
         "product_discount_price",
         "total_price",
         "status",
+        "quantity",
     ];
 
     public function products()
@@ -35,5 +36,10 @@ class Order extends Model
     public function shops()
     {
         return $this->belongsTo("App\Models\ShopProfile", "shop_id", "user_id");
+    }
+
+    public function users()
+    {
+        return $this->belongsTo("App\Models\User", "customer_id", "id");
     }
 }

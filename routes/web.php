@@ -112,9 +112,13 @@ Route::get('/404', function () {
 Route::middleware([ShopMiddleware::class])->group(function () {
     Route::prefix('shop-')->group(function () {
 
-        Route::get('/profile', function () {
-            return view('Shop.BackendPanel.Profile.profile');
-        });
+        Route::get("add-user", [App\Http\Controllers\Shop\UserController::class, "create"]);
+        Route::post("save-user", [App\Http\Controllers\Shop\UserController::class, "store"]);
+        Route::get("view-users", [App\Http\Controllers\Shop\UserController::class, "index"]);
+        Route::get("inactive-user-status/{id}", [App\Http\Controllers\Shop\UserController::class, "inactive"]);
+        Route::get("active-user-status/{id}", [App\Http\Controllers\Shop\UserController::class, "active"]);
+
+        Route::get("profile", [App\Http\Controllers\Shop\ProfileController::class, "profile"]);
 
         Route::get('/change-password', function () {
             return view('Shop.BackendPanel.ChangePassword.change_password');
@@ -172,7 +176,14 @@ Route::middleware([ShopMiddleware::class])->group(function () {
         Route::get('view-medias', [App\Http\Controllers\Shop\MediaController::class,"index"]);
         Route::post('save-media', [App\Http\Controllers\Shop\MediaController::class,"store"]);
 
-
+//
+// Media
+//
+        Route::get('view-orders', [App\Http\Controllers\Shop\OrderController::class,"index"]);
+        Route::get('view-orders-history', [App\Http\Controllers\Shop\OrderController::class,"orderHistory"]);
+        Route::get('order-accepted/{order_id}', [App\Http\Controllers\Shop\OrderController::class,"accepted"]);
+        Route::get('order-delivered/{order_id}', [App\Http\Controllers\Shop\OrderController::class,"delivered"]);
+        Route::get('order-done/{order_id}', [App\Http\Controllers\Shop\OrderController::class,"done"]);
     });
 });
 
@@ -200,6 +211,18 @@ Route::prefix('customer')->group(function () {
         return view("App.Pages.my_account",[
             "orders" => $orders,
         ]);
+    });
+    // Route::get('my-account', [App\Http\Controllers\Customer\MyAccountController::class, "customerProfile"]);
+});
+
+
+Route::prefix('admin')->group(function () {
+    Route::get("dashboard", function(){
+        return view("Admin.dashboard");
+    });
+
+    Route::get("view-users", function(){
+        return view("Admin.User.index");
     });
     // Route::get('my-account', [App\Http\Controllers\Customer\MyAccountController::class, "customerProfile"]);
 });

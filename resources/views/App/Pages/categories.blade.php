@@ -28,7 +28,7 @@
                 @if($shopCategories)
                 @foreach($shopCategories as $shop_category)
                 <div class="col-6 col-sm-4 col-lg-2">
-                    <a href="#" class="cat-block">
+                    <a href="{{url('shops/category/'.$shop_category->id)}}" class="cat-block">
                         <figure>
                             <span>
                                 <img src="{{$shop_category->image}}" style="width: 131px !important; height: 76px !important;"  alt="Category image">

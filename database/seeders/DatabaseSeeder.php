@@ -14,17 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        $this->call([
-            BrandSeeder::class,
-            ProductSeeder::class,
-            ProductCategorySeeder::class,
-            ShopProfileSeeder::class,
-            ShopCategorySeeder::class,
-            TemplateSeeder::class,
-            CustomerSeeder::class,
-            ProductLabelSeeder::class,
-            // UserSeeder::class,
-        ]);
+        \App\Models\Order::factory(10)->create();
+        // $this->call([
+        //     BrandSeeder::class,
+        //     ProductSeeder::class,
+        //     ProductCategorySeeder::class,
+        //     ShopProfileSeeder::class,
+        //     ShopCategorySeeder::class,
+        //     TemplateSeeder::class,
+        //     CustomerSeeder::class,
+        //     ProductLabelSeeder::class,
+        //     // UserSeeder::class,
+        // ]);
     }
 }

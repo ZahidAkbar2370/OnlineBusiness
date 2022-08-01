@@ -26,14 +26,14 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-elements">
-                                        <form action="#" method="post"  enctype="multipart/form-data">
+                                        <form action="{{ URL::to('shop-/save-user') }}" method="post"  enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
 
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>User Name</label>
-                                                        <input type="text" class="form-control" name="user_name">
+                                                        <input type="text" class="form-control" name="name">
                                                     </div>
                                                 </div>
 

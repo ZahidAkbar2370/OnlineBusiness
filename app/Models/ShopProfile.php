@@ -30,4 +30,14 @@ class ShopProfile extends Model
     {
         return $this->belongsTo("App\Models\ShopCategory","shop_category_id","id");
     }
+
+    public function template()
+    {
+        return $this->belongsTo("App\Models\Template","template_id","id");
+    }
+
+    // public function package()
+    // {
+    //     return $this->belongsTo("App\Models\Package","template_id","id");
+    // }
 }

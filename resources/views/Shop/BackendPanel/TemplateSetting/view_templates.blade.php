@@ -18,7 +18,7 @@
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
-                    {{-- <a href="{{url('shop/'.$shopProfile->shop_url)}}"><button class="btn btn-primary">Visit Webiste</button></a> --}}
+                    <a href="{{url('shop/'.$shopProfile->shop_url)}}" target="_blank"><button class="btn btn-primary">Visit Webiste</button></a>
                             
                             <div class="card">
                                 <div class="bootstrap-data-table-panel">

@@ -30,7 +30,7 @@
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
-                    <a href="{{url('shop-add-user')}}"><button class="btn btn-primary">Add New User</button></a>
+                    <a href="{{url('shop-/add-label')}}"><button class="btn btn-primary">Add New Label</button></a>
                             
                             <div class="card">
                                 <div class="bootstrap-data-table-panel">
@@ -38,15 +38,12 @@
                                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Role</th>
-                                                    <th>Status</th>
+                                                    <th>Label Name</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                {{-- <tr>
                                                     <td>Zahid AKbar</td>
                                                     <td>janujakhar2370@gmail.com</td></td>
                                                     <td>Admin</td>
@@ -55,25 +52,14 @@
                                                     <td><a href="#" class="btn btn-danger">InActive</a>
                                                     <a href="#" class="btn btn-success">Active</a></td>
                                                     
-                                                </tr>
-                                                @if(!empty($allUsers))
-                                                @foreach($allUsers as $user)
+                                                </tr> --}}
+                                                @if(!empty($labels))
+                                                @foreach($labels as $label)
                                                 <tr>
-                                                    <td>{{$user->name}}</td>
-                                                    <td>{{$user->email}}</td>
-                                                    <td>{{$user->role}}</td>
+                                                    <td>{{$label->label_name}}</td>
 
-                                                    @if($user->status == "1")
-                                                        <td>Active</td>
-                                                    @else
-                                                        <td>In-Active</td>
-                                                    @endif
-
-                                                    @if($user->status == "1")
-                                                        <td><a href="update-user-status/{{$user->id}}/0" class="btn btn-danger">InActive</a></td>
-                                                    @else
-                                                        <td><a href="update-user-status/{{$user->id}}/1" class="btn btn-success">Active</a></td>
-                                                    @endif
+                                                    <td><a href="{{ url('shop-/label-status/'.$label->id)}}" class="btn btn-danger">Delete</a></td>
+                                                    
                                                 </tr>
                                                 @endforeach
                                                 @endif

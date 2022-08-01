@@ -24,7 +24,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="user-photo m-b-30">
-                  <img class="img-fluid" src="{{asset('assets/images/user-profile.jpg')}}" alt="" />
+                  <img class="img-fluid" src="{{ $shopProfile->profile_image ?? '' }}" style="width: 170px;height: 170px;" alt="" />
                 </div>
                 <div class="user-work">
                   <h4>Shop Info.</h4>
@@ -61,9 +61,9 @@
                 </div> --}}
               </div>
               <div class="col-lg-8">
-                <div class="user-profile-name">john doe</div>
+                <div class="user-profile-name">{{ Auth::user()->name ?? "" }}</div>
                 <div class="user-Location">
-                  <i class="ti-location-pin"></i> Chah Gopal Wala</div>
+                  <i class=""></i> Since: {{ Auth::user()->created_at->diffForHumans() }}</div>
                 {{-- <div class="user-job-title">Product Designer</div> --}}
                 {{-- <div class="ratings">
                   <h4>Ratings</h4>
@@ -77,7 +77,7 @@
                   </div>
                 </div> --}}
                 <div class="user-send-message">
-                  <span>hello i m zahid akbar PHP laravel Developer from acode withz ahid thanks</span>
+                  <span>{{ $shopProfile->shop_about }}</span>
                 </div>
                 <div class="custom-tab user-profile-tab">
                   <ul class="nav nav-tabs" role="tablist">
@@ -91,19 +91,19 @@
                         <h4>Contact information</h4>
                         <div class="phone-content">
                           <span class="contact-title">Phone:</span>
-                          <span class="phone-number">+8801629599859</span>
+                          <span class="phone-number">{{ $shopProfile->shop_mobile_no ?? "" }}</span>
                         </div>
                         <div class="address-content">
                           <span class="contact-title">Address:</span>
-                          <span class="mail-address">123, Rajar Goli, South Mugda</span>
+                          <span class="mail-address">{{ $shopProfile->shop_address ?? "" }}</span>
                         </div>
                         <div class="email-content">
                           <span class="contact-title">Email:</span>
-                          <span class="contact-email">hello@Admin Board.com</span>
+                          <span class="contact-email">{{ Auth::user()->email ?? "" }}</span>
                         </div>
                         <div class="website-content">
                           <span class="contact-title">Website:</span>
-                          <span class="contact-website">www.Admin Board.com</span>
+                          <span class="contact-website btn btn-dark"><a target="_blank" href="{{ url('shop/'.$shopProfile->shop_url ?? '') }}" style="color: aliceblue">Visit Webiste</a></span>
                         </div>
                         {{-- <div class="skype-content">
                           <span class="contact-title">Skype:</span>
@@ -114,11 +114,11 @@
                         <h4>Basic information</h4>
                         <div class="birthday-content">
                           <span class="contact-title">Active Template:</span>
-                          <span class="birth-date">January 31, 1990 </span>
+                          <span class="birth-date">{{ $shopProfile->template->template_name ?? "" }}</span>
                         </div>
                         <div class="gender-content">
                           <span class="contact-title">Package Name:</span>
-                          <span class="gender">Male</span>
+                          <span class="gender">{{ $shopProfile->package_id }}</span>
                         </div>
                       </div>
                     </div>

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId("shop_id");
             $table->foreignId("product_id");
             $table->string("product_sale_price");
+            $table->string("quantity")->nullable();
             $table->string("product_discount_price");
             $table->string("total_price");
             $table->enum("status",["pending", "accepted", "delivered", "done"]);

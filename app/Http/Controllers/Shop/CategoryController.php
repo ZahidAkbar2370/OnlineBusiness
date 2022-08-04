@@ -36,6 +36,23 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
+    public function editCategory($id)
+    {
+        $category = ProductCategory::find($id);
+
+        return view("Shop.BackendPanel.Category.edit_category", ["category" => $category]);
+    }
+
+    public function update(Request $request)
+    {
+        $updateCategory = ProductCategory::find($request->id);
+
+        $updateCategory->p_category_name = $request->p_category_name;
+        $updateCategory->update();
+
+        Session::flash("success", "Category Updated Successfully");
+        return redirect('shop-/view-categories');
+    }
     public function activeCategory($id)
     {
         $activeProductCategory = ProductCategory::find($id);

@@ -8,6 +8,15 @@ use App\Models\ShopProfile;
 
 class ProductController extends Controller
 {
+    public function productDetail($product_id)
+    {
+        $product = Product::where("id", $product_id)->with("ProductCategory")->with("brand")->first();
+        // echo "<pre>";
+        // print_r($product);
+        // echo "</pre>";
+        // exit;
+        return view('App.pages.product_detail_page', ["product" => $product]);
+    }
     // public function products($shop_url)
     // {
     //     $all_shops = ShopProfile::where("publication_status", "1")->orderBy("id", "DESC")->with("ShopCategory")->get();

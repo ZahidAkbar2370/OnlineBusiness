@@ -90,6 +90,7 @@ Route::get('/productDetail', function () {
 
 
 Route::get("/",[App\Http\Controllers\IndexController::class,"home"]);
+Route::get("/productDetail/{product_id}",[App\Http\Controllers\ProductController::class,"productDetail"]);
 Route::get("products",[App\Http\Controllers\IndexController::class,"products"]);
 // Route::get("product",[App\Http\Controllers\IndexController::class,"products"]);
 Route::get("shops",[App\Http\Controllers\ShopController::class,"shops"]);
@@ -136,7 +137,8 @@ Route::middleware([ShopMiddleware::class])->group(function () {
         Route::get("view-brands",[App\Http\Controllers\Shop\BrandController::class,"index"]);
         Route::get("active-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"active"]);
         Route::get("inactive-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"inactive"]);
-        Route::get("edit-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"index"]);
+        Route::get("edit-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"edit"]);
+        Route::post("update-brand",[App\Http\Controllers\Shop\BrandController::class,"update"]);
         Route::get("delete-brand/{id}",[App\Http\Controllers\Shop\BrandController::class,"delete"]);
 //
 // Shop Categories
@@ -147,6 +149,7 @@ Route::middleware([ShopMiddleware::class])->group(function () {
         Route::get("active-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"activeCategory"]);
         Route::get("inactive-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"inactiveCategory"]);
         Route::get("edit-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"editCategory"]);
+        Route::post("update-category",[App\Http\Controllers\Shop\CategoryController::class,"update"]);
         Route::get("delete-category/{id}",[App\Http\Controllers\Shop\CategoryController::class,"deleteCategory"]);
 //
 // Shop Products

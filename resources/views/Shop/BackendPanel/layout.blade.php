@@ -71,7 +71,7 @@
                             <li><a href="{{url('shop-/view-brands')}}">Brands</a></li>
                             <li><a href="{{url('shop-/view-categories')}}">Product Category</a></li>
                             <li><a href="{{url('shop-/view-products')}}">Products</a></li>
-                            <li><a href="{{url('shop-/view-lables')}}">Lables</a></li>
+                            <li><a href="{{url('shop-/view-labels')}}">Lables</a></li>
                         </ul>
                     </li>
 

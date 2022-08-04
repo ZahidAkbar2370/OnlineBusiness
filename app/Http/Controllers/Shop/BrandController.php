@@ -23,6 +23,24 @@ class BrandController extends Controller
         return view("Shop.BackendPanel.Brand.add_brand");
     }
 
+    public function edit($id)
+    {
+        $brand = Brand::find($id);
+
+        return view("Shop.BackendPanel.Brand.edit_brand", ["brand" => $brand]);
+    }
+
+    public function update(Request $request)
+    {
+        $updateBrand = Brand::find($request->id);
+
+        $updateBrand->brand_name = $request->brand_name;
+        $updateBrand->update();
+
+        Session::flash("success", "Brand Updated Successfully");
+        return redirect('shop-/view-brands');
+    }
+
     public function store(Request $request)
     {
         $user_id = Auth::user()->id ?? "1";

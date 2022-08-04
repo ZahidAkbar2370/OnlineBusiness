@@ -49,7 +49,7 @@
                     <div class="product product-2">
                         <figure class="product-media">
                             {{-- <span class="product-label label-circle label-sale">Sale</span> --}}
-                            <a href="{{ url('productDetail') }}">
+                            <a href="{{ url('productDetail/'. $product->id) }}">
                                 {{-- <img src="{{asset('assets/images/demos/demo-4/products/product-10.jpg')}}" alt="Product image" class="product-image"> --}}
                                 <img src="{{$product->product_image_1}}" alt="Product image" class="product-image">
                             </a>

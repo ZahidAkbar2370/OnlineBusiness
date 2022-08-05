@@ -87,8 +87,8 @@
                             <!-- /# card -->
 
 
-                            @include('Shop.BackendPanel.TemplateSetting.slider');
-                            @include('Shop.BackendPanel.TemplateSetting.trend');
+                            {{-- @include('Shop.BackendPanel.TemplateSetting.slider');
+                            @include('Shop.BackendPanel.TemplateSetting.trend'); --}}
                             
                             
 

@@ -36,6 +36,7 @@ class RegisterController extends Controller
             "shop_mobile_no" => $request->shop_mobile_no,
             "shop_address" => $request->shop_address,
             "shop_about" => $request->shop_about,
+            "profile_image" => "https://via.placeholder.com/640x480.png/0022dd?text=".$request->shop_name,
             "publication_status" => "0",
         ]);
 

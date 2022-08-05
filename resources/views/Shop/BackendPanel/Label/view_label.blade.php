@@ -34,21 +34,21 @@
                                                     <th>Sr #</th>
                                                     <th>Label Name</th>
                                                     {{-- <th>Optional</th> --}}
-                                                    <th>Publication Status</th>
+                                                    {{-- <th>Publication Status</th> --}}
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if(!empty($labels))
-                                                @foreach($labels as $key => $label)
+                                                @if(!empty($all_labels))
+                                                @foreach($all_labels as $key => $label)
                                                 <tr>
                                                     <td>{{$key+1}}</td>
-                                                    <td>{{$label->label_name}}</td>
+                                                    <td>{{$label->label}}</td>
                                                     {{-- <td>{{$brand->optional}}</td> --}}
                                                     
                                                     
                                                     <td>
-                                                        <a href="{{url('shop-/edit-label/'.$label->id)}}" class="btn btn-info">Edit</a>
+                                                        {{-- <a href="{{url('shop-/edit-label/'.$label->id)}}" class="btn btn-info">Edit</a> --}}
                                                         <a href="{{url('shop-/delete-label/'.$label->id)}}" onclick="return confirm('Do You want to Delete Label?')" class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr>

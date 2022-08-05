@@ -62,12 +62,12 @@
                                                     <td>
 
                                                         @if($product->publication_status == "1")
-                                                            <a href="{{url('shop-/active-product/'.$product->id)}}" class="btn btn-danger">InActive</a>
+                                                            <a href="{{url('shop-/inactive-product/'.$product->id)}}" class="btn btn-danger">InActive</a>
                                                         @else
-                                                            <a href="{{url('shop-/inactive-product/'.$product->id)}}" class="btn btn-success">Active</a>
+                                                            <a href="{{url('shop-/active-product/'.$product->id)}}" class="btn btn-success">Active</a>
                                                         @endif
 
-                                                        <a href="{{url('shop-/edit-product/'.$product->id)}}" class="btn btn-info">Edit</a>
+                                                        {{-- <a href="{{url('shop-/edit-product/'.$product->id)}}" class="btn btn-info">Edit</a> --}}
                                                         <a href="{{url('shop-/delete-product/'.$product->id)}}" class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr>

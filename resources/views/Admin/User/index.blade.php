@@ -12,7 +12,7 @@
                         <div class="col-12">
                             <h2 class="content-header-title float-left mb-0">{{ __('Users') }}</h2>
                             <span class="float-right">
-                                <a href="{{ url('admin/create-user') }}" class="btn btn-primary text-white">Create User</a>
+                                {{-- <a href="{{ url('admin/create-user') }}" class="btn btn-primary text-white">Create User</a> --}}
                         </span>
 
 
@@ -42,23 +42,31 @@
                                                     <tr>
                                                         <th style="" class="text-center">{{ __('Name') }}</th>
                                                         <th style="" class="text-center">{{ __('Email') }}</th>
-                                                        <th style="" class="text-center">{{ __('Registered at') }}</th>
+                                                        <th style="" class="text-center">{{ __('Role') }}</th>
                                                         <th style="" class="text-center">{{ __('Status') }}</th>
                                                         <th style="" class="text-center">{{ __('Action') }}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @if(!empty($allUsers))
-                                                    @foreach ($allUsers as $user)
+                                                    @if(!empty($users))
+                                                    @foreach ($users as $user)
                                                         <tr>
                                                             <td class="text-center">{{ $user->name  }}</td>
                                                             <td class="text-center">{{ $user->email }}</td>
-                                                            <td class="text-center">{{ $user->created_at }}</td>
-                                                            <td class="text-center">{{ $user->type }}</td>
+                                                            <td class="text-center">{{ $user->role }}</td>
+                                                            @if($user->publication_status == "1")
+                                                                <td class="text-center">Active</td>
+                                                            @else 
+                                                                <td class="text-center">De Active</td>
+                                                            @endif
                                                             <td class="text-center">
                                                                 <div class="btn-group">
-                                                                    <a class="btn btn-Info btn-sm Login  text-white" href="{{ url('admin/login-as-client', $user->id) }}" target="_blank">Login as Client</a>
-                                                                    <a class="btn btn-danger btn-sm Delete  text-white" href="{{ url('admin/delete-user', $user->id) }}">Delete</a>
+                                                                    @if($user->publication_status == "1")
+                                                                    <a class="btn btn-danger btn-sm Login  text-white" href="{{ url('admin/user-deactive', $user->id) }}">De Active</a>
+                                                                    @else
+                                                                    <a class="btn btn-success btn-sm Login  text-white" href="{{ url('admin/user-active', $user->id) }}">Active</a>
+
+                                                                    @endif
                                                                 </div>
                                                             </td>
 

@@ -20,8 +20,8 @@
                                 <div class="card">
                                     <div class="card-header d-flex align-items-start pb-0">
                                         <div>
-                                            <h2 class="text-bold-700 mb-0">{{ $users ?? "1"}}</h2>
-                                            <p class="text-dark">{{ __('Users') }}</p>
+                                            <h2 class="text-bold-700 mb-0">{{ $shops ?? "1"}}</h2>
+                                            <p class="text-dark">{{ __('Registered Shops') }}</p>
                                         </div>
                                         <div class="avatar bg-rgba-success p-50 m-0">
                                             <div class="avatar-content">
@@ -35,12 +35,12 @@
 
 
                         <div class="col-lg-3 col-sm-6 col-12">
-                            <a href="{{ url('admin/view-jobs') }}">
+                            <a href="#">
                                 <div class="card">
                                     <div class="card-header d-flex align-items-start pb-0">
                                         <div>
-                                            <h2 class="text-bold-700 mb-0">{{ $jobs ?? "2"}}</h2>
-                                            <p class="text-dark">{{ __('Jobs') }}</p>
+                                            <h2 class="text-bold-700 mb-0">{{ $customers ?? "0"}}</h2>
+                                            <p class="text-dark">{{ __('Customers') }}</p>
                                         </div>
                                         <div class="avatar bg-rgba-success p-50 m-0">
                                             <div class="avatar-content">
@@ -54,12 +54,12 @@
 
 
                         <div class="col-lg-3 col-sm-6 col-12">
-                            <a href="{{ url('admin/view-fourms') }}">
+                            <a href="#">
                                 <div class="card">
                                     <div class="card-header d-flex align-items-start pb-0">
                                         <div>
-                                            <h2 class="text-bold-700 mb-0">{{ $fourms ?? "3"}}</h2>
-                                            <p class="text-dark">{{ __('Fourms') }}</p>
+                                            <h2 class="text-bold-700 mb-0">{{ $registerProducts ?? "0"}}</h2>
+                                            <p class="text-dark">{{ __('Total Products') }}</p>
                                         </div>
                                         <div class="avatar bg-rgba-success p-50 m-0">
                                             <div class="avatar-content">
@@ -72,12 +72,12 @@
                         </div>
 
                         <div class="col-lg-3 col-sm-6 col-12">
-                            <a href="{{ url('admin/view-courses') }}">
+                            <a href="#">
                                 <div class="card">
                                     <div class="card-header d-flex align-items-start pb-0">
                                         <div>
-                                            <h2 class="text-bold-700 mb-0">{{ $courses ?? "3"}}</h2>
-                                            <p class="text-dark">{{ __('Courses') }}</p>
+                                            <h2 class="text-bold-700 mb-0">{{ $orders ?? "0"}}</h2>
+                                            <p class="text-dark">{{ __('Total Orders') }}</p>
                                         </div>
                                         <div class="avatar bg-rgba-success p-50 m-0">
                                             <div class="avatar-content">
@@ -92,12 +92,12 @@
 
                     <div class="row">
                         <div class="col-lg-3 col-sm-6 col-12">
-                            <a href="{{ url('admin/view-alimnus') }}">
+                            <a href="#">
                                 <div class="card">
                                     <div class="card-header d-flex align-items-start pb-0">
                                         <div>
-                                            <h2 class="text-bold-700 mb-0">{{ $alimuns ?? "4"}}</h2>
-                                            <p class="text-dark">{{ __('Alimnus') }}</p>
+                                            <h2 class="text-bold-700 mb-0">{{ $templates ?? "0"}}</h2>
+                                            <p class="text-dark">{{ __('Templates') }}</p>
                                         </div>
                                         <div class="avatar bg-rgba-success p-50 m-0">
                                             <div class="avatar-content">
@@ -112,12 +112,12 @@
 
                         
                         <div class="col-lg-3 col-sm-6 col-12">
-                            <a href="{{ url('admin/view-gallery') }}">
+                            <a href="#">
                                 <div class="card">
                                     <div class="card-header d-flex align-items-start pb-0">
                                         <div>
-                                            <h2 class="text-bold-700 mb-0">{{ $gallery ?? "4"}}</h2>
-                                            <p class="text-dark">{{ __('Gallery') }}</p>
+                                            <h2 class="text-bold-700 mb-0">{{ $shopCategories ?? "0"}}</h2>
+                                            <p class="text-dark">{{ __('Shop Categories') }}</p>
                                         </div>
                                         <div class="avatar bg-rgba-success p-50 m-0">
                                             <div class="avatar-content">

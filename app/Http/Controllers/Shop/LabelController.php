@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Label;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LabelController extends Controller
 {
@@ -28,10 +29,10 @@ class LabelController extends Controller
 
         $insertLabel = Label::create([
             "user_id" => $user_id,
-            "p_category_name" => $request->category_name,
+            "label" => $request->label_name,
         ]);
 
-        Session::flash("success","ProductCategory Created Successfully");
+        Session::flash("success","Label Created Successfully");
         return redirect()->back();
     }
 
@@ -59,12 +60,12 @@ class LabelController extends Controller
         return redirect()->back();
     }
 
-    public function deleteCategory($id)
+    public function deleteLabel($id)
     {
-        $deleteProductCategory = ProductCategory::find($id);
+        $deleteProductCategory = Label::find($id);
         $deleteProductCategory->delete();
 
-        Session::flash("success","ProductCategory Delete Successfully");
+        Session::flash("success","Label Delete Successfully");
         return redirect()->back();
     }
 }

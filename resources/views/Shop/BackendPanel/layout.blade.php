@@ -97,18 +97,18 @@
                         <ul>
                             <li><a href="{{ url('shop-/view-orders') }}">New Orders</a></li>
                             <li><a href="{{ url('shop-/view-orders-history') }}">Orders History</a></li>
-                            <li><a href="#">Payments</a></li>
+                            {{-- <li><a href="#">Payments</a></li> --}}
                         </ul>
                     </li>
 
-                    <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Reports <span
+                    {{-- <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Reports <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        {{-- <ul>
+                        <ul>
                             <li><a href="#">New Orders</a></li>
                             <li><a href="#">Orders History</a></li>
                             <li><a href="#">Payments</a></li>
-                        </ul> --}}
-                    </li>
+                        </ul>
+                    </li> --}}
 
                     {{-- <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> POS System <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>

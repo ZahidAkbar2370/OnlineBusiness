@@ -145,6 +145,8 @@
                                     </div><!-- End .dropdown-cart-total -->
                                 </div><!-- End .dropdown-menu --> --}}
                             </div><!-- End .cart-dropdown -->
+                        @elseif(!empty(auth()->user()) && auth()->user()->role == "shop_owner")
+                            <a href="{{route('login')}}" style="color:white ;margin-right: 8px" class="btn btn-primary">Dashboard</a>
                         @else
                             <a href="#" class="wishlist-link">
                                 <a href="{{route('login')}}" style="color:white ;margin-right: 8px">Login</a>

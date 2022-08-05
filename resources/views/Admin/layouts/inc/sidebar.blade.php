@@ -30,7 +30,7 @@
 
 
 
-            <li
+            {{-- <li
                 class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/view-gallery') ? 'active' : '' }}">
                 <a href="{{ url('admin/view-gallery') }}">
                     <i class="feather icon-image"></i>
@@ -44,7 +44,7 @@
                     <i class="feather icon-users"></i>
                     <span class="menu-title">{{ __('Courses') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
             {{-- <li
                 class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/view-alumni') ? 'active' : '' }}">
@@ -54,45 +54,53 @@
                 </a>
             </li> --}}
 
-            <li
+            {{-- <li
                 class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/view-jobs') ? 'active' : '' }}">
                 <a href="{{ url('admin/view-jobs') }}">
                     <i class="feather icon-lock"></i>
                     <span class="menu-title">{{ __('Jobs') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
-            <li
+            {{-- <li
                 class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/view-events') ? 'active' : '' }}">
                 <a href="{{ url('admin/view-events') }}">
                     <i class="feather icon-lock"></i>
                     <span class="menu-title">{{ __('Events') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
-            <li
+            {{-- <li
                 class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/view-fourms') ? 'active' : '' }}">
                 <a href="{{ url('admin/view-fourms') }}">
                     <i class="feather icon-lock"></i>
                     <span class="menu-title">{{ __('Fourms') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
             <li
                 class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/view-users') ? 'active' : '' }}">
                 <a href="{{ url('admin/view-users') }}">
-                    <i class="feather icon-lock"></i>
+                    <i class="feather icon-users"></i>
                     <span class="menu-title">{{ __('User') }}</span>
                 </a>
             </li>
 
             <li
+                class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/logout') ? 'active' : '' }}">
+                <a href="{{ url('admin/logout') }}">
+                    <i class="feather icon-lock"></i>
+                    <span class="menu-title">{{ __('Logout') }}</span>
+                </a>
+            </li>
+
+            {{-- <li
                 class=" nav-item {{ strpos(url()->full(), strtolower(Auth::User()->role ?? "admin") . '/change-password') ? 'active' : '' }}">
                 <a href="{{ url('admin/change-password') }}">
                     <i class="feather icon-lock"></i>
                     <span class="menu-title">{{ __('Change Password') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
 
         </ul>

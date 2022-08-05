@@ -25,7 +25,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view("Shop.BackendPanel.Brand.add_brand");
+        return view("Shop.BackendPanel.Product.add_product");
     }
 
     public function edit($id)
@@ -42,6 +42,26 @@ class ProductController extends Controller
         $updateProduct->brand_name = $request->brand_name;
         $updateProduct->update();
 
+        $user_id = Auth::user()->id ?? "1";
+
+        $thumbnail = 'images/15.jpg';
+
+        $insertBrand = Product::create([
+            "user_id" => $user_id,
+            "label_id" => $request->label_id,
+            "product_name" => $request->product_name,
+            "p_category_id" => $request->p_categorey_name,
+            "brand_id" => $request->brand_name,
+            "product_sale_price" => $request->sale_price,
+            "product_discount_price" => $request->discount_price,
+            "product_short_description" => $request->short_description,
+            "product_image_1" => $thumbnail,
+            "product_image_2" => $thumbnail,
+        ]);
+
+        Session::flash("success","Product Created Successfully");
+        return redirect()->back();
+
         Session::flash("success", "Brand Updated Successfully");
         return redirect('shop-/view-brands');
     }
@@ -50,45 +70,55 @@ class ProductController extends Controller
     {
         $user_id = Auth::user()->id ?? "1";
 
-        $insertBrand = Brand::create([
+        $thumbnail = 'images/15.jpg';
+
+        $insertBrand = Product::create([
             "user_id" => $user_id,
-            "brand_name" => $request->brand_name,
+            "label_id" => $request->label_id,
+            "product_name" => $request->product_name,
+            "p_category_id" => $request->p_categorey_name,
+            "brand_id" => $request->brand_name,
+            "product_sale_price" => $request->sale_price,
+            "product_discount_price" => $request->discount_price,
+            "product_short_description" => $request->short_description,
+            "product_image_1" => $thumbnail,
+            "product_image_2" => $thumbnail,
         ]);
 
-        Session::flash("success","Brand Created Successfully");
+        Session::flash("success","Product Created Successfully");
         return redirect()->back();
     }
 
-    public function active($id)
+    public function activeProduct($id)
     {
-        $activeBrand = Brand::find($id);
+        $activeProduct = Product::find($id);
 
-        $activeBrand->publication_status = "1";
+        $activeProduct->publication_status = "1";
 
-        $activeBrand->update();
+        $activeProduct->update();
 
-        Session::flash("success","Brand Status Active Successfully");
+        Session::flash("success","Product Status Active Successfully");
         return redirect()->back();
     }
 
-    public function inactive($id)
+    public function inactiveProduct($id)
     {
-        $inactiveBrand = Brand::find($id);
+        $activeProduct = Product::find($id);
 
-        $inactiveBrand->publication_status = "0";
+        $activeProduct->publication_status = "0";
 
-        $inactiveBrand->update();
+        $activeProduct->update();
 
-        Session::flash("success","Brand Status Inactive Successfully");
+        Session::flash("success","Product Status De-Active Successfully");
         return redirect()->back();
     }
 
-    public function delete($id)
+    public function deleteProduct($id)
     {
-        $deleteBrand = Brand::find($id);
-        $deleteBrand->delete();
+        $deleteProduct = Product::find($id);
+        $deleteProduct->delete();
 
-        Session::flash("success","Brand Delete Successfully");
+        Session::flash("success","Product Delete Successfully");
         return redirect()->back();
     }
 }

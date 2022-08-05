@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\TemplateController;
+use App\Http\Middleware\CustomerCheck;
 use App\Http\Middleware\ShopMiddleware;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\ShopCategory;
+use App\Models\Template;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -155,7 +159,7 @@ Route::middleware([ShopMiddleware::class])->group(function () {
 // Shop Products
 // 
         Route::get("create-product",[App\Http\Controllers\Shop\ProductController::class,"create"]);
-        Route::post("save-product",[App\Http\Controllers\Shop\ProductController::class,"store"]);
+        Route::post("save-products",[App\Http\Controllers\Shop\ProductController::class,"store"]);
         Route::get("view-products",[App\Http\Controllers\Shop\ProductController::class,"index"]);
         Route::get("active-product/{id}",[App\Http\Controllers\Shop\ProductController::class,"activeProduct"]);
         Route::get("inactive-product/{id}",[App\Http\Controllers\Shop\ProductController::class,"inactiveProduct"]);
@@ -165,7 +169,7 @@ Route::middleware([ShopMiddleware::class])->group(function () {
 //
 //  Product Labels
 // 
-        Route::get("create-label",[App\Http\Controllers\Shop\LabelController::class,"create"]);
+        Route::get("add-label",[App\Http\Controllers\Shop\LabelController::class,"create"]);
         Route::post("save-label",[App\Http\Controllers\Shop\LabelController::class,"store"]);
         Route::get("view-labels",[App\Http\Controllers\Shop\LabelController::class,"index"]);
         Route::get("active-label/{id}",[App\Http\Controllers\Shop\LabelController::class,"activeLabel"]);
@@ -192,6 +196,7 @@ Route::middleware([ShopMiddleware::class])->group(function () {
 
 //////////////////////////////////// Customer Routes //////////////////////////////////
 
+Route::middleware([CustomerCheck::class])->group(function () {
 Route::prefix('customer')->group(function () {
     Route::get('my-account', function () {
         
@@ -217,15 +222,38 @@ Route::prefix('customer')->group(function () {
     });
     // Route::get('my-account', [App\Http\Controllers\Customer\MyAccountController::class, "customerProfile"]);
 });
+});
 
 
 Route::prefix('admin')->group(function () {
     Route::get("dashboard", function(){
-        return view("Admin.dashboard");
+        $shops = User::where("role", "shop_owner")->count();
+        $customers = User::where("role", "customer")->count();
+        $registerProducts = User::count();
+        $orders = Order::count();
+        $templates = Template::count();
+        $shopCategories = ShopCategory::count();
+
+        return view("Admin.dashboard",[
+            "shops" => $shops,
+            "customers" => $customers,
+            "registerProducts" => $registerProducts,
+            "orders" => $orders,
+            "templates" => $templates,
+            "shopCategories" => $shopCategories,
+        ]);
     });
 
-    Route::get("view-users", function(){
-        return view("Admin.User.index");
+    Route::get("logout", function(){
+        Auth::logout();
+        return redirect('/');
     });
+    Route::get("view-users", function(){
+        $users = App\Models\User::orderBy("id", "DESC")->get();
+
+        return view("Admin.User.index", ["users" => $users]);
+    });
+    Route::get('user-active/{id}', [App\Http\Controllers\Admin\UserController::class, "active"]);
+    Route::get('user-deactive/{id}', [App\Http\Controllers\Admin\UserController::class, "deactive"]);
     // Route::get('my-account', [App\Http\Controllers\Customer\MyAccountController::class, "customerProfile"]);
 });
